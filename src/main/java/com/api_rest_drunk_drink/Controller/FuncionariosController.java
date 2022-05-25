@@ -40,7 +40,12 @@ public class FuncionariosController {
 
     @PostMapping("/")
     public void adicionar(@RequestBody FuncionariosModel funcionario){
+
+        
+
+
         funcionario_service.adicionar_funcionario(funcionario);
+
     }
 
     @DeleteMapping("/{id}")

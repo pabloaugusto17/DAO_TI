@@ -1,26 +1,33 @@
 package com.api_rest_drunk_drink.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name = "pessoa")
-public class PessoaModel {
+@Inheritance (strategy = InheritanceType.JOINED)
+public class PessoaModel implements Serializable {
 
-    @Column(length = 50)
-    private String nome;
     @Id
-    private Integer cpf;
-    @Column(length = 20)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id_pessoa;
+    @Column(length = 50, name = "nome")
+    private String nome;
+    @Column (length = 15, name = "cpf")
+    private String cpf;
+    @Column(length = 20, name = "senha")
     private String senha;
-    @Column(length = 50)
+    @Column(length = 50, name = "endereco")
     private String endereco;
-    @Column
+    @Column (name = "telefone", length = 50)
     private String telefone;
-    @Column(length = 30)
+    @Column(length = 30, name = "email")
     private String email;
 
-    public PessoaModel(String nome, Integer cpf, String senha, String endereco, String telefone, String email) {
+    public PessoaModel(){
+
+    }
+
+    public PessoaModel(String nome, String cpf, String senha, String endereco, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
@@ -29,8 +36,12 @@ public class PessoaModel {
         this.email = email;
     }
 
-    public PessoaModel() {
+    public Integer getId_pessoa() {
+        return id_pessoa;
+    }
 
+    public void setId_pessoa(Integer id_pessoa) {
+        this.id_pessoa = id_pessoa;
     }
 
     public String getNome() {
@@ -41,11 +52,11 @@ public class PessoaModel {
         this.nome = nome;
     }
 
-    public Integer getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -80,6 +91,4 @@ public class PessoaModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 }

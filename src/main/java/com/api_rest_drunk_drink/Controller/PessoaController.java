@@ -41,23 +41,6 @@ public class PessoaController {
         pessoa_servico.adicionar_pessoa(pessoa);
     }
 
-    /*@PutMapping("/{id}/{new_id}")
-    public ResponseEntity<?> atualizar(@PathVariable Integer id, @PathVariable Integer new_id){
-
-        try{
-
-            PessoaModel pessoa_alterar = pessoa_servico.get_pessoa(id);
-            pessoa_alterar.setCpf(new_id);
-            return new ResponseEntity<>(HttpStatus.OK);
-
-
-        }catch (Exception e){
-            System.err.println(e);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        }
-
-    }*/
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Integer id){

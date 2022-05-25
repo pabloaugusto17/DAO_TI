@@ -2,43 +2,42 @@ package com.api_rest_drunk_drink.Model;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
-public class FuncionariosModel extends PessoaModel{
+@Entity (name = "funcionario")
+//@PrimaryKeyJoinColumn(name = "id_pessoa")
+public class FuncionariosModel {
 
-    @Column
+    @Column (name = "avaliacao")
     private double avaliacao;
 
-    @Column (length = 200)
+    @Column (length = 200, name = "dados_bancarios")
     private String dados_bancarios;
 
-    @Column (length = 200)
+    @Column (length = 200, name = "descricao")
     private String descricao;
 
-    @NotNull
-    @Column
     @Id
-    @GeneratedValue
+    @Column(nullable = false, name = "id_funcionario")
     private Integer id_funcionario;
 
-    @Column
+    @Column (name = "cnpj_barEvento")
     private Integer cnpj_barEvento;
 
-    @Column
+    @Column (name = "preco_hora")
     private double preco_hora;
 
     public FuncionariosModel(String nome, Integer cpf, String senha, String endereco, String telefone, String email, double avaliacao, String dados_bancarios, String descricao, Integer id_funcionario, Integer cnpj_barEvento, double preco_hora) {
-        super(nome, cpf, senha, endereco, telefone, email);
+
+        //super(nome, cpf, senha, endereco, telefone, email);
+
         this.avaliacao = avaliacao;
         this.dados_bancarios = dados_bancarios;
         this.descricao = descricao;
         this.id_funcionario = id_funcionario;
         this.cnpj_barEvento = cnpj_barEvento;
         this.preco_hora = preco_hora;
+
     }
 
     public FuncionariosModel(){
