@@ -32,8 +32,6 @@ public class Conexao {
                 usuário através da biblioteca :// porta / nome do banco de dados
                 / usuario / senha
             */
-
-            Class.forName("com.mysql.jbdc.Driver");
             
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/drunk_drink",
                     "root", ""); 

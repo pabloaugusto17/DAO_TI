@@ -14,8 +14,6 @@ public class PessoaDAO {
 
             try(PreparedStatement transacao = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
 
-               
-
                 transacao.setString(1, nome);
                 transacao.setLong(2, cpf);
                 transacao.setString(3, senha);
@@ -23,6 +21,9 @@ public class PessoaDAO {
                 transacao.setLong(5, telefone);
                 transacao.setString(6, email);
                 
+                transacao.execute();
+
+                System.out.println("PESSOA ADICIONADA COM SUCESSO");
 
                 return true;
 
@@ -40,6 +41,19 @@ public class PessoaDAO {
 
     }
 
+    public static boolean deleta_pessoa(){
 
+        return false;
+    }
+
+    public static boolean altera_pessoa(){
+
+        return false;
+    }
+
+    public static boolean procura_pessoa(){
+
+        return false;
+    }
 
 }
