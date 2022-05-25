@@ -41,7 +41,7 @@ public class PessoaController {
         pessoa_servico.adicionar_pessoa(pessoa);
     }
 
-    @PutMapping("/{id}/{new_id}")
+    /*@PutMapping("/{id}/{new_id}")
     public ResponseEntity<?> atualizar(@PathVariable Integer id, @PathVariable Integer new_id){
 
         try{
@@ -57,7 +57,7 @@ public class PessoaController {
 
         }
 
-    }
+    }*/
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Integer id){
