@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api_rest_drunk_drink" />
+        <module name="api_1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api_rest_drunk_drink" target="11" />
+      <module name="api_1" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="api_rest_drunk_drink" options="-parameters" />
+      <module name="api_1" options="-parameters" />
     </option>
   </component>
 </project>
