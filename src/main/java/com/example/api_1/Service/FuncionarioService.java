@@ -2,7 +2,9 @@ package com.example.api_1.Service;
 
 
 import com.example.api_1.Model.FuncionariosModel;
+import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.Repository.FuncionariosRepository;
+import com.example.api_1.Repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ import java.util.List;
 public class FuncionarioService {
 
     @Autowired
+    private PessoaRepository pessoaRepository;
+
+    @Autowired
     private FuncionariosRepository funcionario_repository;
 
     public List<FuncionariosModel> listar_todos_funcionarios(){
@@ -23,7 +28,23 @@ public class FuncionarioService {
     }
 
     public void adicionar_funcionario(FuncionariosModel funcionario){
-        funcionario_repository.save(funcionario);
+
+        PessoaModel pessoa = pessoaRepository.findById(funcionario.getId_funcionario()).get();
+
+        try{
+
+            if(pessoa != null){
+                funcionario_repository.save(funcionario);
+            }else{
+                System.err.println("Pessoa não existe");
+            }
+
+
+        }catch (Exception e){
+            System.err.println(e);
+        }
+
+
     }
 
     public FuncionariosModel get_funcionario(Integer id){
