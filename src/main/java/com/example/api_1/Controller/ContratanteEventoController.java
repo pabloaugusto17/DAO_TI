@@ -36,6 +36,7 @@ public class ContratanteEventoController {
 
     }
 
+    @GetMapping("/{id}")
     public ResponseEntity<ContratanteEventoModel> get(@PathVariable Integer id){
 
         try{
