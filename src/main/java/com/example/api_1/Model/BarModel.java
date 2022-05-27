@@ -121,7 +121,7 @@ public class BarModel {
         this.email = email;
         this.senha = senha;
     }
-    
+
     public BarModel(){
 
     }
