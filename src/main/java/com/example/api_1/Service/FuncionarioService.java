@@ -35,10 +35,7 @@ public class FuncionarioService {
 
             if(pessoa != null){
                 funcionario_repository.save(funcionario);
-            }else{
-                System.err.println("Pessoa não existe");
             }
-
 
         }catch (Exception e){
             System.err.println(e);

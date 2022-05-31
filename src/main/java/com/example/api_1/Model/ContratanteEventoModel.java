@@ -9,6 +9,7 @@ public class ContratanteEventoModel {
     @Id
     private Integer contratante_evento_id;
 
+
     public ContratanteEventoModel(Integer contratante_evento_id) {
         this.contratante_evento_id = contratante_evento_id;
     }
