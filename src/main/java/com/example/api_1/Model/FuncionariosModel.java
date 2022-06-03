@@ -19,7 +19,7 @@ public class FuncionariosModel {
     @Id
     private Integer id_funcionario;
 
-    @Column (name = "cnpj_bar_evento")
+    @Column (name = "cnpj_bar")
     private Integer cnpj_bar_evento;
 
     @Column (name = "preco_hora")

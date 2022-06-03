@@ -1,9 +1,10 @@
 package com.example.api_1.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "contratante_evento")
+@Entity(name = "contratante")
 public class ContratanteEventoModel {
 
     @Id
