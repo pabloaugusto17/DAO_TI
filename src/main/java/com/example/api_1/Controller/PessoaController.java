@@ -14,7 +14,7 @@ import java.util.List;
 public class PessoaController {
 
     @Autowired
-    PessoaService pessoa_servico;
+    private PessoaService pessoa_servico;
 
     @GetMapping("")
     public List<PessoaModel> listar(){
@@ -41,11 +41,43 @@ public class PessoaController {
         pessoa_servico.adicionar_pessoa(pessoa);
     }
 
-
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Integer id){
 
         pessoa_servico.deletar_pessoa(id);
+
+    }
+
+    @RequestMapping("/verificalogin{email}{senha}")
+    public String verifica_login(@PathVariable String email, @PathVariable String senha){
+
+        boolean email_existe = false;
+        boolean senha_correta = false;
+
+        List<PessoaModel> pessoas = pessoa_servico.listar_todas_pessoas();
+
+        for(int i = 0; i < pessoas.size(); i++){
+
+            if(email.equals(pessoas.get(i).getEmail())){
+
+                email_existe = true;
+
+                if(senha.equals(pessoas.get(i).getSenha())){
+
+                    senha_correta = true;
+                    return "SC";
+
+                }else{
+
+                    return "SI";
+
+                }
+
+
+            }
+        }
+
+        return "NA";
 
     }
 
