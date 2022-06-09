@@ -4,15 +4,9 @@
  */
 package com.example.api_1.ViewController;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import com.example.api_1.Controller.PessoaController;
-import com.example.api_1.Model.PessoaModel;
-import com.example.api_1.Service.PessoaService;
-import javafx.application.HostServices;
-import javafx.event.ActionEvent;
+import com.example.api_1.ViewInitializer.ControlledScreen;
+import com.example.api_1.ViewInitializer.ScreenController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -20,12 +14,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TouchEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
 @Component
-public class TelaLoginController {
+public class TelaLoginController implements Initializable, ControlledScreen {
+
+
+    ScreenController controller;
 
     @Autowired
     private PessoaController pessoaController;
@@ -59,8 +59,10 @@ public class TelaLoginController {
 
         String verificacao = pessoaController.verifica_login(email_verificar, senha_verificar);
 
+
         if(verificacao.equals("SC")){
 
+            controller.setScreen("telaInicialBarDrinks");
             //Ir para tela inicial
 
         }else if(verificacao.equals("NA")){
@@ -72,5 +74,15 @@ public class TelaLoginController {
             label_incorreto.setText("Senha incorreta");
 
         }
+    }
+
+    @Override
+    public void setScreenParent(ScreenController screenPage) {
+        controller = screenPage;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
