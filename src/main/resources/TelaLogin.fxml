@@ -32,7 +32,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label id="label_realizar_cadastro" fx:id="realizar_cadastro" layoutX="423.0" layoutY="505.0" stylesheets="@Stylesheet.css" text="Realizar Cadastro" textFill="#f7a34a">
+            <Label id="label_realizar_cadastro" fx:id="realizar_cadastro" layoutX="423.0" layoutY="505.0" onMousePressed="#onMousePressed_realizarCadastro" stylesheets="@Stylesheet.css" text="Realizar Cadastro" textFill="#f7a34a">
                <font>
                   <Font size="24.0" />
                </font>

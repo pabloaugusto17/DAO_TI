@@ -81,5 +81,41 @@ public class PessoaController {
 
     }
 
+    @RequestMapping("/verificaemail{email}")
+    public boolean verifica_email(@PathVariable String email){
+
+        List<PessoaModel> pessoas = pessoa_servico.listar_todas_pessoas();
+
+        for(int i = 0 ; i < pessoas.size(); i++){
+
+            if(pessoas.get(i).getEmail().equals(email)){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
+    @RequestMapping("/returnbyemail{email}")
+    public int retorna_id_by_email(@PathVariable String email){
+
+        List<PessoaModel> pessoas = pessoa_servico.listar_todas_pessoas();
+
+        for(int i = 0; i < pessoas.size(); i++){
+
+            if(pessoas.get(i).getEmail().equals(email)){
+
+                return pessoas.get(i).getId_pessoa();
+
+            }
+
+        }
+
+        return -1;
+
+    }
+
 }
 

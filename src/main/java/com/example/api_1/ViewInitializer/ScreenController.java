@@ -22,6 +22,8 @@ public class ScreenController  extends StackPane {
     //armazenar todas as telas em apenas um hash
     private HashMap<String, Node> screens = new HashMap<>();
 
+    public static int cod_pessoa_atual =  0;
+
     public ScreenController(){
         super();
     }

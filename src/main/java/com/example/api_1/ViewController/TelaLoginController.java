@@ -62,6 +62,7 @@ public class TelaLoginController implements Initializable, ControlledScreen {
 
         if(verificacao.equals("SC")){
 
+            ScreenController.cod_pessoa_atual = pessoaController.retorna_id_by_email(email_verificar);
             controller.setScreen("telaInicialBarDrinks");
             //Ir para tela inicial
 
@@ -84,5 +85,10 @@ public class TelaLoginController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    @FXML
+    void onMousePressed_realizarCadastro(MouseEvent event) {
+        controller.setScreen("telacadastro");
     }
 }

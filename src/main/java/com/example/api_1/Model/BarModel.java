@@ -39,6 +39,17 @@ public class BarModel {
     @Column (name = "senha")
     private String senha;
 
+    @Column(name = "id_pessoa")
+    private int id_pessoa;
+
+    public int getId_pessoa() {
+        return id_pessoa;
+    }
+
+    public void setId_pessoa(int id_pessoa) {
+        this.id_pessoa = id_pessoa;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -111,7 +122,7 @@ public class BarModel {
         this.id_bar = id_bar;
     }
 
-    public BarModel(String nome, String telefone, String descricao, String cep, String cnpj, double avaliacao, String email, String senha) {
+    public BarModel(String nome, String telefone, String descricao, String cep, String cnpj, double avaliacao, String email, String senha, int id_pessoa) {
         this.nome = nome;
         this.telefone = telefone;
         this.descricao = descricao;
@@ -120,6 +131,7 @@ public class BarModel {
         this.avaliacao = avaliacao;
         this.email = email;
         this.senha = senha;
+        this.id_pessoa = id_pessoa;
     }
 
     public BarModel(){
