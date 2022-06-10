@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import javafx.util.Duration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 @Component
@@ -22,6 +24,7 @@ public class ScreenController  extends StackPane {
     //armazenar todas as telas em apenas um hash
     private HashMap<String, Node> screens = new HashMap<>();
 
+    public static ApplicationContext ac_static;
     public static int cod_pessoa_atual =  0;
 
     public ScreenController(){
@@ -86,6 +89,7 @@ public class ScreenController  extends StackPane {
                     }, new KeyValue(opacity, 0.0)));
                     fade.play();
             //caso só possua uma tela em screens ela será carregada com o mesmo efeito de antes
+
             }else{
 
                 setOpacity(0.0);
@@ -122,6 +126,21 @@ public class ScreenController  extends StackPane {
         }
 
 
+    }
+
+    public void reloadScreen(String name) {
+
+        Node screen = this.getScreen(name);
+
+    }
+
+    public static void set_ac(ApplicationContext ac){
+        ScreenController.ac_static = ac;
+    }
+
+    public static ApplicationContext get_ac(){
+
+        return ScreenController.ac_static;
     }
 
 

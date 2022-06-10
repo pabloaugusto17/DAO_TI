@@ -90,10 +90,13 @@ class StageInitializer implements ApplicationListener<StageReadyEvent> {
 
         ScreenController main = new ScreenController();
 
+        ScreenController.set_ac(this.applicationContext);
+
         main.loadScreen("telalogin","/TelaLogin.fxml", this.applicationContext);
         main.loadScreen("telaInicialBarDrinks", "/TelaInicialBarDrinks.fxml", this.applicationContext);
         main.loadScreen("telacadastro", "/TelaCadastro.fxml", this.applicationContext);
         main.loadScreen("telacadastro2", "/TelaCadastro2.fxml", this.applicationContext);
+
 
         main.setScreen("telalogin");
 

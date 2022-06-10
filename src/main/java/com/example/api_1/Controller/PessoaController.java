@@ -1,6 +1,12 @@
 package com.example.api_1.Controller;
 
+import com.example.api_1.Model.BarModel;
+import com.example.api_1.Model.ContratanteEventoModel;
+import com.example.api_1.Model.FuncionariosModel;
 import com.example.api_1.Model.PessoaModel;
+import com.example.api_1.Service.BarService;
+import com.example.api_1.Service.ContratanteEventoService;
+import com.example.api_1.Service.FuncionarioService;
 import com.example.api_1.Service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +20,20 @@ import java.util.List;
 public class PessoaController {
 
     @Autowired
+    private BarService barService;
+    @Autowired
+    private ContratanteEventoService contratanteEventoService;
+    @Autowired
+    private FuncionarioService funcionarioService;
+    @Autowired
     private PessoaService pessoa_servico;
 
+    @GetMapping("/getPessoaByIdDynamic{id}")
+    public PessoaModel getPessoaByIdDynamic(@PathVariable Integer id){
+
+        return pessoa_servico.get_pessoa(id);
+
+    }
     @GetMapping("")
     public List<PessoaModel> listar(){
         return pessoa_servico.listar_todas_pessoas();
@@ -115,6 +133,48 @@ public class PessoaController {
 
         return -1;
 
+    }
+
+    @RequestMapping("/derivapessoa{id}")
+    public String derivacao_pessoa(@PathVariable Integer id){
+
+        List<ContratanteEventoModel> ces = contratanteEventoService.listar_todos_ce();
+        List<FuncionariosModel> funcionarios = funcionarioService.listar_todos_funcionarios();
+        List<BarModel> bares = barService.listar_bar();
+
+        for(int i = 0; i < ces.size(); i++){
+
+            if(ces.get(i).getContratante_evento_id().equals(id)){
+
+                return "CE";
+
+
+            }
+
+        }
+
+        for(int i = 0; i < funcionarios.size(); i++){
+
+            if(funcionarios.get(i).getId_funcionario().equals(id)){
+
+                return "FUN";
+
+            }
+
+        }
+
+        for(int i = 0; i < bares.size(); i++){
+
+            if(bares.get(i).getId_bar().equals(id)){
+
+                return "BAR";
+
+            }
+
+        }
+
+
+        return null;
     }
 
 }
