@@ -1,5 +1,6 @@
 package com.example.api_1.ViewController;
 
+import com.example.api_1.Controller.FuncionariosController;
 import com.example.api_1.Controller.PessoaController;
 import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.ViewInitializer.ControlledScreen;
@@ -33,11 +34,25 @@ public class TelaInicialFuncionarioController implements ControlledScreen{
     private Label label_1;
 
     @FXML
+    private Label label_2;
+
+    @FXML
+    private Label label_3;
+
+    @FXML
+    private Label label_eventos;
+
+    @FXML
+    private Label label_nome;
+
+    @FXML
     private Line line_1;
 
     @FXML
     private Pane pane_1;
 
+    @Autowired
+    private FuncionariosController funcionariosController;
     @Autowired
     private PessoaController pessoaController;
     ScreenController controller;
@@ -60,7 +75,8 @@ public class TelaInicialFuncionarioController implements ControlledScreen{
     public void initialize() {
 
        label_1.setText("Olá, " + pessoaController.getPessoaByIdDynamic(ScreenController.cod_pessoa_atual).getNome());
-
+       label_nome.setText(pessoaController.getPessoaByIdDynamic(ScreenController.cod_pessoa_atual).getNome());
+       label_eventos.setText(label_eventos.getText() + " " + funcionariosController.get_quantidade_eventos(ScreenController.cod_pessoa_atual));
 
     }
 

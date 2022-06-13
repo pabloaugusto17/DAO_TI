@@ -25,14 +25,14 @@ public class FuncionariosModel {
     @Column (name = "preco_hora")
     private double preco_hora;
 
-    public FuncionariosModel(double avaliacao, String dados_bancarios, String descricao, Integer id_funcionario, Integer cnpj_barEvento, double preco_hora) {
+    public FuncionariosModel(String dados_bancarios, String descricao, Integer id_funcionario) {
 
-        this.avaliacao = avaliacao;
+        this.avaliacao = 0;
         this.dados_bancarios = dados_bancarios;
         this.descricao = descricao;
         this.id_funcionario = id_funcionario;
-        this.cnpj_bar_evento = cnpj_bar_evento;
-        this.preco_hora = preco_hora;
+        this.cnpj_bar_evento = null;
+        this.preco_hora = 0;
 
     }
 

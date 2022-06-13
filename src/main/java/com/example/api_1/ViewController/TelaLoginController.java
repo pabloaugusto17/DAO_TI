@@ -75,7 +75,10 @@ public class TelaLoginController implements Initializable, ControlledScreen {
             }
 
             if(derivacao.equals("CE")){
+
+                controller.loadScreen("dashboardCE", "/TelaInicialContratanteEvento.fxml", ScreenController.get_ac());
                 //ir tela contratante evento
+                controller.setScreen("dashboardCE");
 
             }
 

@@ -122,15 +122,13 @@ public class BarModel {
         this.id_bar = id_bar;
     }
 
-    public BarModel(String nome, String telefone, String descricao, String cep, String cnpj, double avaliacao, String email, String senha, int id_pessoa) {
+    public BarModel(String nome, String telefone, String descricao, String cep, String cnpj, int id_pessoa) {
         this.nome = nome;
         this.telefone = telefone;
         this.descricao = descricao;
         this.cep = cep;
         this.cnpj = cnpj;
-        this.avaliacao = avaliacao;
-        this.email = email;
-        this.senha = senha;
+        this.avaliacao = 0;
         this.id_pessoa = id_pessoa;
     }
 

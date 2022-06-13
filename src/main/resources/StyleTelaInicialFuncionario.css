@@ -23,7 +23,7 @@
 
 }
 
-#label_1{
+#label_1, #label_2, #label_3, #label_nome, #label_eventos{
 
     -fx-text-fill: #F7A34A;
 }

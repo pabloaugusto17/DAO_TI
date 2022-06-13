@@ -47,6 +47,7 @@ public class TelaCadastroController2 implements ControlledScreen {
     void OnButtonBarDrinklPressed(MouseEvent event) {
 
         //abrir tela de registro de bar de drink
+        controller.setScreen("telacadastro3");
 
     }
 
@@ -67,6 +68,7 @@ public class TelaCadastroController2 implements ControlledScreen {
     void OnButtonFuncionarioPressed(MouseEvent event) {
 
         //ir para registro de funcionário
+        controller.setScreen("telacadastro4");
 
     }
 }

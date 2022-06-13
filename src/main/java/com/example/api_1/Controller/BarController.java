@@ -1,7 +1,9 @@
 package com.example.api_1.Controller;
 
 import com.example.api_1.Model.BarModel;
+import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.Service.BarService;
+import com.example.api_1.Service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +14,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/bar")
 public class BarController {
-
+    @Autowired
+    private PessoaService pessoaService;
     @Autowired
     private BarService barService;
 
     @PostMapping("/")
     public void add_bar(@RequestBody BarModel bar){
+
+        Integer id = bar.getId_pessoa();
+
+        PessoaModel pessoa = pessoaService.get_pessoa(id);
+
+        bar.setEmail(pessoa.getEmail());
+        bar.setSenha(pessoa.getSenha());
 
         barService.add_bar(bar);
 

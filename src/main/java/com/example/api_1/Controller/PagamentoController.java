@@ -3,6 +3,7 @@ package com.example.api_1.Controller;
 import com.example.api_1.Model.PagamentoModel;
 import com.example.api_1.Service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/pagamento")
 public class PagamentoController {
+
+
 
     @Autowired
     private PagamentoService pagamentoService;

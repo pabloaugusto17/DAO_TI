@@ -5,6 +5,7 @@ import com.example.api_1.Model.EventoModel;
 import com.example.api_1.Service.ContratanteEventoService;
 import com.example.api_1.Service.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/evento")
 public class EventoController {
+
 
     @Autowired
     EventoService eventoService;
