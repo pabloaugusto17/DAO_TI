@@ -35,11 +35,6 @@ public class PessoaController {
     @Autowired
     private PessoaService pessoa_servico;
 
-
-
-
-
-
     @GetMapping("/getPessoaByIdDynamic{id}")
     public PessoaModel getPessoaByIdDynamic(@PathVariable Integer id){
 

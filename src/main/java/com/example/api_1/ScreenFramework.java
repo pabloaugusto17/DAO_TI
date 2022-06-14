@@ -4,19 +4,14 @@ import com.example.api_1.ViewInitializer.ScreenController;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.*;
 import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 
 public class ScreenFramework extends Application {
 
@@ -92,11 +87,11 @@ class StageInitializer implements ApplicationListener<StageReadyEvent> {
 
         ScreenController.set_ac(this.applicationContext);
 
-        main.loadScreen("telalogin","/TelaLogin.fxml", this.applicationContext);
-        main.loadScreen("telacadastro", "/TelaCadastro.fxml", this.applicationContext);
-        main.loadScreen("telacadastro2", "/TelaCadastro2.fxml", this.applicationContext);
-        main.loadScreen("telacadastro3", "/TelaCadastroFunc.fxml", this.applicationContext);
-        main.loadScreen("telacadastro4", "/TelaCadastroBar.fxml", this.applicationContext);
+        main.loadScreen("telalogin", "/Login/TelaLogin.fxml", this.applicationContext);
+        main.loadScreen("telacadastro", "/Cadastro/TelaCadastro.fxml", this.applicationContext);
+        main.loadScreen("telacadastro2", "/Cadastro/TelaCadastro2.fxml", this.applicationContext);
+        main.loadScreen("telacadastro3", "/Cadastro/TelaCadastroFunc.fxml", this.applicationContext);
+        main.loadScreen("telacadastro4", "/Cadastro/TelaCadastroBar.fxml", this.applicationContext);
 
         main.setScreen("telalogin");
 

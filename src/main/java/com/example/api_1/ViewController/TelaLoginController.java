@@ -4,8 +4,8 @@
  */
 package com.example.api_1.ViewController;
 
+import com.example.api_1.Controller.BarController;
 import com.example.api_1.Controller.PessoaController;
-import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.ViewInitializer.ControlledScreen;
 import com.example.api_1.ViewInitializer.ScreenController;
 import javafx.fxml.FXML;
@@ -16,7 +16,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -53,8 +52,10 @@ public class TelaLoginController implements Initializable, ControlledScreen {
     @FXML
     private Label label_incorreto;
 
+
     @FXML
     void OnMousePressed_ButtonEntrar(MouseEvent event) throws IOException {
+
 
         String email_verificar = text_field_1.getText();
         String senha_verificar = password_field_1.getText();
@@ -64,13 +65,15 @@ public class TelaLoginController implements Initializable, ControlledScreen {
 
         if(verificacao.equals("SC")){
 
+
+
             ScreenController.cod_pessoa_atual = pessoaController.retorna_id_by_email(email_verificar);
             //Ir para tela inicial
             String derivacao = pessoaController.derivacao_pessoa(ScreenController.cod_pessoa_atual);
 
             if(derivacao.equals("BAR")){
                 //ir tela bar
-                controller.loadScreen("dashboardBarDrink", "/TelaInicialBarDrink.fxml", ScreenController.get_ac());
+                controller.loadScreen("dashboardBarDrink", "/TelaInicial/BarDrink.fxml", ScreenController.get_ac());
                 controller.setScreen("dashboardBarDrink");
             }
 
@@ -84,7 +87,7 @@ public class TelaLoginController implements Initializable, ControlledScreen {
 
             if(derivacao.equals("FUN")){
                 //ir tela funcionario
-                controller.loadScreen("dashboardFuncionario", "/TelaInicialFuncionario.fxml", ScreenController.get_ac());
+                controller.loadScreen("dashboardFuncionario", "/TelaInicial/Funcionario.fxml", ScreenController.get_ac());
                 controller.setScreen("dashboardFuncionario");
             }
 

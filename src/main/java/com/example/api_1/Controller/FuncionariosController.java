@@ -105,4 +105,10 @@ public class FuncionariosController {
 
     }
 
+    @GetMapping("/getByDinamicId{id}")
+    public FuncionariosModel getByDinamicId(@PathVariable Integer id){
+
+        return funcionario_service.get_funcionario(id);
+
+    }
 }

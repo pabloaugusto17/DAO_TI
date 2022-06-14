@@ -5,6 +5,7 @@ import com.example.api_1.Repository.BarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -37,6 +38,10 @@ public class BarService {
 
         barRepository.deleteById(id);
 
+    }
+
+    public List<Integer> lista_funcionarios(Integer id_bar){
+        return barRepository.listIdFuncionarios(id_bar);
     }
 
 

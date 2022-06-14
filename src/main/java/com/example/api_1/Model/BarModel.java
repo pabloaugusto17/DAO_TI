@@ -9,7 +9,7 @@ public class BarModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-    public Integer id_bar;
+    private Integer id_bar;
 
     @NotNull
     @Column(name = "nome")
@@ -41,6 +41,7 @@ public class BarModel {
 
     @Column(name = "id_pessoa")
     private int id_pessoa;
+
 
     public int getId_pessoa() {
         return id_pessoa;

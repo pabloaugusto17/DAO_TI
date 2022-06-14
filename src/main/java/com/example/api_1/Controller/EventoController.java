@@ -21,7 +21,7 @@ public class EventoController {
     EventoService eventoService;
 
     @GetMapping("")
-    public List<EventoModel> listar_ce(){
+    public List<EventoModel> listar_eventos(){
 
         return eventoService.listar_eventos();
 
@@ -53,6 +53,22 @@ public class EventoController {
             return new ResponseEntity<EventoModel>(HttpStatus.NOT_FOUND);
         }
 
+    }
+
+    @GetMapping("/getbyname{id}")
+    public EventoModel getEventoByName(@PathVariable String name){
+
+        List<EventoModel> eventos = eventoService.listar_eventos();
+
+        for(int i = 0; i < eventos.size(); i++){
+
+            if(eventos.get(i).getNome().equals(name)){
+                return eventos.get(i);
+            }
+
+        }
+
+        return null;
     }
 
 }
