@@ -1,6 +1,8 @@
 package com.example.api_1.Model;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 @Entity(name = "evento")
@@ -34,6 +36,9 @@ public class EventoModel {
     @Column
     private String hora_termino;
 
+    @Column
+    private String data_evento;
+
     public EventoModel(Integer id_bar_evento, Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao, String hora_termino) {
         this.id_bar_evento = id_bar_evento;
         this.id_contratante_evento = id_contratante_evento;
@@ -43,6 +48,10 @@ public class EventoModel {
         this.quantidade_participantes = quantidade_participantes;
         this.duracao = duracao;
         this.hora_termino = hora_termino;
+
+        Date data_atual = new Date();
+        String data = new SimpleDateFormat("dd/MM/yyyy").format(data_atual);
+        this.data_evento = data;
     }
 
     public EventoModel() {
@@ -118,5 +127,13 @@ public class EventoModel {
 
     public void setHora_termino(String hora_termino) {
         this.hora_termino = hora_termino;
+    }
+
+    public String getData_evento() {
+        return data_evento;
+    }
+
+    public void setData_evento(String data_evento) {
+        this.data_evento = data_evento;
     }
 }

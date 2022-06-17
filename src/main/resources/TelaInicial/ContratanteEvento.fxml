@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.TelaInicial.TIFuncionarioController">
+<AnchorPane fx:id="anchor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.TelaInicial.TICEController">
    <children>
       <Button fx:id="button_vejaEventos" layoutX="870.0" layoutY="625.0" mnemonicParsing="false" onMousePressed="#onButtonVejaEventosPressed" prefHeight="92.0" prefWidth="422.0" text="Veja seus eventos">
          <font>
@@ -26,16 +26,6 @@
             <Label fx:id="label_nome" layoutX="196.0" layoutY="50.0" text="NOME">
                <font>
                   <Font size="25.0" />
-               </font>
-            </Label>
-            <Label fx:id="label_preco_hora" layoutX="196.0" layoutY="119.0" text="Preço Hora:">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="label_avaliacao" layoutX="196.0" layoutY="147.0" text="Avaliação: ">
-               <font>
-                  <Font size="20.0" />
                </font>
             </Label>
             <ImageView fx:id="image_ex" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
@@ -62,11 +52,16 @@
       </Label>
       <Pane fx:id="pane_2" layoutX="842.0" layoutY="257.0" prefHeight="228.0" prefWidth="450.0">
          <children>
-            <Label fx:id="label_4" layoutX="32.0" layoutY="50.0" text="Registrado no Bar:">
+            <Label fx:id="label_4" layoutX="32.0" layoutY="50.0" text="Registrar novo evento">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
+            <Button fx:id="button_registrar" layoutX="32.0" layoutY="100.0" mnemonicParsing="false" text="Regisrar">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Label fx:id="label_5" layoutX="440.0" layoutY="31.0" text="Proposta">

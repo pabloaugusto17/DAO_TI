@@ -12,4 +12,7 @@ public interface BarRepository extends JpaRepository<BarModel, Integer> {
             " WHERE f.cnpj_bar = (:id_bar);")
     List<Integer> listIdFuncionarios(Integer id_bar);
 
+    @Query(nativeQuery = true, value = "SELECT COUNT(e.id_evento) AS quant FROM evento e" +
+    "WHERE e.id_bar_evento = (:id_bar); ")
+    Integer quant_eventos_bar(Integer id_bar);
 }

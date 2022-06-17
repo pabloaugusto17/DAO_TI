@@ -1,4 +1,4 @@
-package com.example.api_1.ViewController;
+package com.example.api_1.ViewController.Eventos;
 
 import com.example.api_1.Controller.BarController;
 import com.example.api_1.Controller.ContratanteEventoController;
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class TelaVejaEventosBarDrinkController implements ControlledScreen {
+public class EBarDrinkController implements ControlledScreen {
 
     ScreenController controller;
 
@@ -87,7 +87,6 @@ public class TelaVejaEventosBarDrinkController implements ControlledScreen {
     @FXML
     public void initialize(){
 
-        //Popular lista
         popular_lista();
 
     }
@@ -95,74 +94,19 @@ public class TelaVejaEventosBarDrinkController implements ControlledScreen {
     @FXML
     void onListViewPressed(MouseEvent event) {
 
-        //mostral modal com eventos
         gera_modal();
 
-
     }
 
-    private void gera_modal(){
+    //Funções
 
-        String titulo = list_view.getSelectionModel().getSelectedItem();
-
-        if(!titulo.equals("Sem eventos registrados")){
-
-            EventoModel eventoModel = eventoController.getEventoByName(titulo);
-
-            TextArea textArea = new TextArea();
-            textArea.setText("Informações do evento: " +
-                    "\n\t-Nome: " + eventoModel.getNome() +
-                    "\n\t-Endereço: " + eventoModel.getEndereco() +
-                    "\n\t-Duração: " + eventoModel.getDuracao() +
-                    "\n\t-Quantidade de participantes: " + eventoModel.getQuantidade_participantes() +
-                    "\n\t-Contratante do evento: " + contratanteEventoController.getNameById(eventoModel.getId_contratante_evento()) +
-                    "\n\t-Bar realizador: " + barController.getNameById(eventoModel.getId_bar_evento()));
-
-            textArea.setEditable(false);
-            textArea.setWrapText(true);
-            textArea.setPrefSize(400, 200);
-            textArea.setStyle("-fx-text-fill:#F7A34A");
-
-
-            Scene scene = new Scene(textArea);
-            Stage stage = new Stage();
-
-            if (titulo != null) {
-                stage.setTitle(titulo);
-            }
-
-            scene.getStylesheets().add("Eventos/StyleEventos.css");
-            stage.setScene(scene);
-            stage.initModality(Modality.NONE);
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
-
-
-        }
-
-
-
-
-    }
+    @Autowired
+    private EventosGeral eventosGeral;
 
     private void popular_lista(){
 
-        List<EventoModel> lista_eventos = eventoController.listar_eventos();
 
-        BarModel bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual);
-
-        ObservableList<String> items = FXCollections.observableArrayList();
-
-        for(int i = 0; i < lista_eventos.size(); i++){
-
-            if(lista_eventos.get(i).getId_bar_evento().equals(bar.getId_bar())){
-                items.add(lista_eventos.get(i).getNome());
-            }
-        }
-
-        if(items.isEmpty()){
-            items.add("Sem eventos registrados");
-        }
+        ObservableList<String> items = eventosGeral.lista_populada("Bar");
 
         list_view.setItems(items);
 
@@ -173,6 +117,11 @@ public class TelaVejaEventosBarDrinkController implements ControlledScreen {
 
     }
 
+    private void gera_modal(){
 
+        String titulo = list_view.getSelectionModel().getSelectedItem();
+        eventosGeral.gera_modal(titulo);
+
+    }
 
 }

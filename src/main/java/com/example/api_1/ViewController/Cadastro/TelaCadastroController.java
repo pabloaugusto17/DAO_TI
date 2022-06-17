@@ -1,4 +1,4 @@
-package com.example.api_1.ViewController;
+package com.example.api_1.ViewController.Cadastro;
 
 import com.example.api_1.Controller.PessoaController;
 import com.example.api_1.Model.PessoaModel;

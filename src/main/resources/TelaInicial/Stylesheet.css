@@ -3,14 +3,14 @@
     -fx-background-color: #110E0E;
 }
 
-#button_vejaEventos{
+#button_vejaEventos, #button_registrar{
 
     -fx-background-color:#110E0E;
     -fx-text-fill: #F7A34A;
     -fx-border-color: #F7A34A;
 }
 
-#button_vejaEventos:hover{
+#button_vejaEventos:hover, #button_registrar:hover{
 
     -fx-background-color:white;
     -fx-text-fill: #110E0E;

@@ -1,10 +1,8 @@
-package com.example.api_1.ViewController;
+package com.example.api_1.ViewController.TelaInicial;
 
 import com.example.api_1.Controller.BarController;
 import com.example.api_1.Controller.PessoaController;
 import com.example.api_1.Model.BarModel;
-import com.example.api_1.Model.FuncionariosModel;
-import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.ViewInitializer.ControlledScreen;
 import com.example.api_1.ViewInitializer.ScreenController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +16,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 
-import java.util.Vector;
-
 @Component
-public class TelaInicialBarDrink implements ControlledScreen {
+public class TIBarDrinkController implements ControlledScreen {
 
     //FXML
 

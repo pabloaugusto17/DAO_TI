@@ -7,6 +7,7 @@
 
     -fx-background-color: #150A0A;
     -fx-border-color: #F7A34A;
+    -fx-font-size: 25;
 
 }
 
@@ -22,26 +23,10 @@
     -fx-background-color: white; /* 2 */
     -fx-text-fill: black; /* 5 */
 }
+#button_voltar{
 
-.text-area .content{
-    -fx-background-color: #110E0E;
-}
-
-#label_3, #label_2, #label_4{
-
+    -fx-background-color:#110E0E;
     -fx-text-fill: #F7A34A;
-}
-
-#button_registrar_evento{
-
-    -fx-background-color: #110E0E;
     -fx-border-color: #F7A34A;
-    -fx-text-fill: #F7A34A;
-}
 
-#button_registrar_evento:hover{
-
-    -fx-background-color:white;
-    -fx-text-fill: #110E0E;
-    
 }

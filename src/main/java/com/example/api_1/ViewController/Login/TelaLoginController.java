@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
  */
-package com.example.api_1.ViewController;
+package com.example.api_1.ViewController.Login;
 
 import com.example.api_1.Controller.BarController;
 import com.example.api_1.Controller.PessoaController;
@@ -62,44 +62,52 @@ public class TelaLoginController implements Initializable, ControlledScreen {
 
         String verificacao = pessoaController.verifica_login(email_verificar, senha_verificar);
 
+        if(email_verificar.equals("admin@gmail.com")){
+            if(senha_verificar.equals("SRADMIN")){
 
-        if(verificacao.equals("SC")){
-
-
-
-            ScreenController.cod_pessoa_atual = pessoaController.retorna_id_by_email(email_verificar);
-            //Ir para tela inicial
-            String derivacao = pessoaController.derivacao_pessoa(ScreenController.cod_pessoa_atual);
-
-            if(derivacao.equals("BAR")){
-                //ir tela bar
-                controller.loadScreen("dashboardBarDrink", "/TelaInicial/BarDrink.fxml", ScreenController.get_ac());
-                controller.setScreen("dashboardBarDrink");
-            }
-
-            if(derivacao.equals("CE")){
-
-                controller.loadScreen("dashboardCE", "/TelaInicialContratanteEvento.fxml", ScreenController.get_ac());
-                //ir tela contratante evento
-                controller.setScreen("dashboardCE");
+                controller.loadScreen("admin", "/Admin/TelaAdmin.fxml", ScreenController.get_ac());
+                controller.setScreen("admin");
 
             }
+        }else {
 
-            if(derivacao.equals("FUN")){
-                //ir tela funcionario
-                controller.loadScreen("dashboardFuncionario", "/TelaInicial/Funcionario.fxml", ScreenController.get_ac());
-                controller.setScreen("dashboardFuncionario");
+            if (verificacao.equals("SC")) {
+
+
+                ScreenController.cod_pessoa_atual = pessoaController.retorna_id_by_email(email_verificar);
+                //Ir para tela inicial
+                String derivacao = pessoaController.derivacao_pessoa(ScreenController.cod_pessoa_atual);
+
+                if (derivacao.equals("BAR")) {
+                    //ir tela bar
+                    controller.loadScreen("dashboardBarDrink", "/TelaInicial/BarDrink.fxml", ScreenController.get_ac());
+                    controller.setScreen("dashboardBarDrink");
+                }
+
+                if (derivacao.equals("CE")) {
+
+                    controller.loadScreen("dashboardCE", "/TelaInicial/ContratanteEvento.fxml", ScreenController.get_ac());
+                    //ir tela contratante evento
+                    controller.setScreen("dashboardCE");
+
+                }
+
+                if (derivacao.equals("FUN")) {
+                    //ir tela funcionario
+                    controller.loadScreen("dashboardFuncionario", "/TelaInicial/Funcionario.fxml", ScreenController.get_ac());
+                    controller.setScreen("dashboardFuncionario");
+                }
+
+
+            } else if (verificacao.equals("NA")) {
+
+                label_incorreto.setText("Email incorreto");
+
+            } else if (verificacao.equals("SI")) {
+
+                label_incorreto.setText("Senha incorreta");
+
             }
-
-
-        }else if(verificacao.equals("NA")){
-
-            label_incorreto.setText("Email incorreto");
-
-        }else if(verificacao.equals("SI")){
-
-            label_incorreto.setText("Senha incorreta");
-
         }
     }
 

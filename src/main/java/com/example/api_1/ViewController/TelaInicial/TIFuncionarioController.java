@@ -1,4 +1,4 @@
-package com.example.api_1.ViewController;
+package com.example.api_1.ViewController.TelaInicial;
 
 import com.example.api_1.Controller.BarController;
 import com.example.api_1.Controller.FuncionariosController;
@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 
 
 @Component
-public class TelaInicialFuncionarioController implements ControlledScreen{
+public class TIFuncionarioController implements ControlledScreen{
 
     @FXML
     private ImageView image_ex;

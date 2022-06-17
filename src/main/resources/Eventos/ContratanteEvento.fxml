@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@StyleEventos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.Eventos.EFuncionariosController">
+<AnchorPane fx:id="anchor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@StyleEventos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.Eventos.ECEController">
    <children>
       <ListView fx:id="list_view" layoutX="152.0" layoutY="300.0" onMousePressed="#onListViewPressed" prefHeight="200.0" prefWidth="1026.0" />
       <Line fx:id="line_1" endX="1139.0" layoutX="227.0" layoutY="102.0" startX="-227.0" stroke="#f7a34a" />
@@ -25,5 +26,10 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <Button fx:id="button_registrar_evento" layoutX="1098.0" layoutY="666.0" mnemonicParsing="false" text="Registrar Evento">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
