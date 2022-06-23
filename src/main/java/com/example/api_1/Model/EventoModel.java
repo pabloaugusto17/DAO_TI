@@ -34,12 +34,9 @@ public class EventoModel {
     private double duracao;
 
     @Column
-    private String hora_termino;
-
-    @Column
     private String data_evento;
 
-    public EventoModel(Integer id_bar_evento, Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao, String hora_termino) {
+    public EventoModel(Integer id_bar_evento, Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao) {
         this.id_bar_evento = id_bar_evento;
         this.id_contratante_evento = id_contratante_evento;
         this.nome = nome;
@@ -47,12 +44,26 @@ public class EventoModel {
         this.hora_inicio = hora_inicio;
         this.quantidade_participantes = quantidade_participantes;
         this.duracao = duracao;
-        this.hora_termino = hora_termino;
 
         Date data_atual = new Date();
         String data = new SimpleDateFormat("dd/MM/yyyy").format(data_atual);
         this.data_evento = data;
     }
+
+    public EventoModel(Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao) {
+        this.id_bar_evento = null;
+        this.id_contratante_evento = id_contratante_evento;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.hora_inicio = hora_inicio;
+        this.quantidade_participantes = quantidade_participantes;
+        this.duracao = duracao;
+
+        Date data_atual = new Date();
+        String data = new SimpleDateFormat("dd/MM/yyyy").format(data_atual);
+        this.data_evento = data;
+    }
+
 
     public EventoModel() {
     }
@@ -119,14 +130,6 @@ public class EventoModel {
 
     public void setDuracao(double duracao) {
         this.duracao = duracao;
-    }
-
-    public String getHora_termino() {
-        return hora_termino;
-    }
-
-    public void setHora_termino(String hora_termino) {
-        this.hora_termino = hora_termino;
     }
 
     public String getData_evento() {

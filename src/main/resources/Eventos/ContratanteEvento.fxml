@@ -26,7 +26,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="button_registrar_evento" layoutX="1098.0" layoutY="666.0" mnemonicParsing="false" text="Registrar Evento">
+      <Button fx:id="button_registrar_evento" layoutX="1098.0" layoutY="666.0" mnemonicParsing="false" onMousePressed="#onPressedRegistraEvento" text="Registrar Evento">
          <font>
             <Font size="25.0" />
          </font>

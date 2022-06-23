@@ -57,14 +57,14 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <Button fx:id="button_registrar" layoutX="32.0" layoutY="100.0" mnemonicParsing="false" text="Regisrar">
+            <Button fx:id="button_registrar" layoutX="32.0" layoutY="100.0" mnemonicParsing="false" onMousePressed="#onPressedRegistrarEvento" text="Registrar">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label fx:id="label_5" layoutX="440.0" layoutY="31.0" text="Proposta">
+      <Label fx:id="label_5" layoutX="440.0" layoutY="31.0" onMousePressed="#onPressedProposta" text="Proposta">
          <font>
             <Font size="30.0" />
          </font>

@@ -45,3 +45,25 @@
     -fx-text-fill: #110E0E;
     
 }
+
+#pane_1{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+
+}
+
+#nome_field, #endereco_field, #hora_inicio_field, #quant_participantes_field, #duracao_field, #data_evento_field
+{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+    -fx-prompt-text-fill: #F7A34A;
+    -fx-text-fill: #F7A34A;
+
+}
+
+#label_obs{
+
+    -fx-text-fill: #F7A34A;
+}

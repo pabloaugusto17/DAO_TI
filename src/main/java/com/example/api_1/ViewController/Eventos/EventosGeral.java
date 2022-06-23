@@ -63,6 +63,16 @@ class EventosGeral {
 
             }
 
+            if(tipo.equals("CE")){
+
+                if(lista_eventos.get(i).getId_contratante_evento().equals(contratanteEventoController.get(ScreenController.cod_pessoa_atual).getBody().getContratante_evento_id())){
+                    items.add(lista_eventos.get(i).getNome());
+                }
+
+
+            }
+
+
         }
 
         if(items.isEmpty()){

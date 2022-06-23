@@ -73,8 +73,11 @@ public class ScreenController  extends StackPane {
             //caso possua mais de uma tela
             if(!getChildren().isEmpty()){
 
+                getChildren().remove(0);
+                getChildren().add(0, screens.get(name));
+
                 //criando efeito de fadde
-                Timeline fade = new Timeline(
+                /*Timeline fade = new Timeline(
                     new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1.0)),
                     new KeyFrame(new Duration(1000), new EventHandler<ActionEvent>() {
                         @Override
@@ -87,17 +90,17 @@ public class ScreenController  extends StackPane {
                             fadeIn.play();
                         }
                     }, new KeyValue(opacity, 0.0)));
-                    fade.play();
+                    fade.play();*/
             //caso só possua uma tela em screens ela será carregada com o mesmo efeito de antes
 
             }else{
 
-                setOpacity(0.0);
+                //setOpacity(0.0);
                 getChildren().add(screens.get(name));
-                Timeline fadeIn = new Timeline(
+                /*Timeline fadeIn = new Timeline(
                         new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
                         new KeyFrame(new Duration(2500), new KeyValue(opacity,1.0)));
-                fadeIn.play();
+                fadeIn.play();*/
             }
 
             return true;

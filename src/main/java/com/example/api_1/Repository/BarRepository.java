@@ -8,11 +8,16 @@ import java.util.List;
 
 public interface BarRepository extends JpaRepository<BarModel, Integer> {
 
+    //Colocar groupy by
     @Query(nativeQuery = true, value = "SELECT f.id_funcionario FROM funcionario f" +
             " WHERE f.cnpj_bar = (:id_bar);")
     List<Integer> listIdFuncionarios(Integer id_bar);
 
+    //Colocar group by
     @Query(nativeQuery = true, value = "SELECT COUNT(e.id_evento) AS quant FROM evento e" +
     "WHERE e.id_bar_evento = (:id_bar); ")
     Integer quant_eventos_bar(Integer id_bar);
+
+
+
 }

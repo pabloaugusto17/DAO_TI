@@ -34,12 +34,11 @@ public class EventoService {
 
     public void adicionar_evento(EventoModel evento){
 
-        BarModel bar = barRepository.findById(evento.getId_bar_evento()).get();
         ContratanteEventoModel contratanteEvento = contratanteEventoRepository.findById(evento.getId_contratante_evento()).get();
 
         try{
 
-            if(bar != null && contratanteEvento != null){
+            if(contratanteEvento != null){
 
                 eventoRepository.save(evento);
             }
