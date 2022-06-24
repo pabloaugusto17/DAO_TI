@@ -159,6 +159,22 @@ public class BarController {
         return null;
     }
 
+    @GetMapping("/getBarByName{nome_bar}")
+    public BarModel getBarByName(@PathVariable String nome_bar){
+
+        List<BarModel> bares = barService.listar_bar();
+
+        for(int i = 0 ; i < bares.size(); i++){
+
+            if(bares.get(i).getNome().equals(nome_bar)){
+                return bares.get(i);
+            }
+
+        }
+
+        return null;
+    }
+
 
 
 

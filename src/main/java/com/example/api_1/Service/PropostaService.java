@@ -81,5 +81,13 @@ public class PropostaService {
 
     }
 
+    public List<PropostaModel> recebe_proposta_func(Integer id_func){
+
+        return propostaRepository.recebe_proposta_func(id_func);
+
+    }
+
+
+
 
 }

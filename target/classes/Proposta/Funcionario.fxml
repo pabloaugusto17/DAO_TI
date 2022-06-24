@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@StyleProposta.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.Proposta.FUNCPropostaController">
+   <children>
+      <ListView fx:id="list_view" layoutX="124.0" layoutY="192.0" onMousePressed="#onListViewPressed" prefHeight="364.0" prefWidth="364.0" />
+      <Line fx:id="line_1" endX="1139.0" layoutX="227.0" layoutY="102.0" startX="-227.0" stroke="#f7a34a" />
+      <Label fx:id="label_2" layoutX="596.0" layoutY="31.0" onMousePressed="#onPressedHome" text="Home">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_3" layoutX="720.0" layoutY="31.0" onMousePressed="#onPressedEventos" text="Eventos">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_4" layoutX="440.0" layoutY="31.0" text="Proposta">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

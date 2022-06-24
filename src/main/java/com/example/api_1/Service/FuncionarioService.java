@@ -56,4 +56,15 @@ public class FuncionarioService {
 
     }
 
+    public void atualiza_func(Integer id_func, Integer id_bar){
+
+        FuncionariosModel func = this.get_funcionario(id_func);
+
+        func.setCnpj_bar_evento(id_bar);
+
+        funcionario_repository.saveAndFlush(func);
+
+
+    }
+
 }

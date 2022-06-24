@@ -110,5 +110,11 @@ public class TIFuncionarioController implements ControlledScreen{
         controller.setScreen("telavejaeventosFuncionario");
     }
 
+    @FXML
+    void onPropostaPressed(MouseEvent event) {
+        controller.loadScreen("propostaFUNC", "/Proposta/Funcionario.fxml", ScreenController.get_ac());
+        controller.setScreen("propostaFUNC");
+    }
+
 
 }

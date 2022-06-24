@@ -184,5 +184,21 @@ public class PessoaController {
         return null;
     }
 
+    @GetMapping("getPessoaByName{name}")
+    public PessoaModel getPessoaByName(@PathVariable String name){
+
+        List<PessoaModel> pessoas = pessoa_servico.listar_todas_pessoas();
+
+        for(int i = 0; i < pessoas.size(); i++){
+
+            if(pessoas.get(i).getNome().equals(name)){
+                return pessoas.get(i);
+            }
+
+        }
+
+        return null;
+
+    }
 }
 

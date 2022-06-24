@@ -5,6 +5,7 @@ import com.example.api_1.Controller.EventoController;
 import com.example.api_1.Model.BarModel;
 import com.example.api_1.Model.EventoModel;
 import com.example.api_1.Model.PropostaModel;
+import com.example.api_1.Service.FuncionarioService;
 import com.example.api_1.Service.PropostaService;
 import com.example.api_1.ViewInitializer.ControlledScreen;
 import com.example.api_1.ViewInitializer.ScreenController;
@@ -25,15 +26,13 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
+
 @Component
-public class BDPropostaController implements ControlledScreen {
+public class FUNCPropostaController implements ControlledScreen{
 
     //FXML
     @FXML
     private AnchorPane anchor_pane;
-
-    @FXML
-    private Button button_registrar_proposta;
 
     @FXML
     private Label label_2;
@@ -58,23 +57,16 @@ public class BDPropostaController implements ControlledScreen {
     @FXML
     void onPressedEventos(MouseEvent event) {
 
-        controller.loadScreen("eventosBarDrink", "/Eventos/BarDrink.fxml", ScreenController.get_ac());
-        controller.setScreen("eventosBarDrink");
+        controller.loadScreen("telavejaeventosFuncionario", "/Eventos/Funcionarios.fxml", ScreenController.get_ac());
+        controller.setScreen("telavejaeventosFuncionario");
 
     }
 
     @FXML
     void onPressedHome(MouseEvent event) {
-        controller.setScreen("dashboardBarDrink");
+        controller.setScreen("dashboardFuncionario");
     }
 
-    @FXML
-    void onPressedRegistraProposta(MouseEvent event) {
-
-        controller.loadScreen("registraPropostaFUNC", "/Proposta/RegistraProposta2.fxml", ScreenController.get_ac());
-        controller.setScreen("registraPropostaFUNC");
-
-    }
 
     @FXML
     public void initialize(){
@@ -82,8 +74,6 @@ public class BDPropostaController implements ControlledScreen {
         popular_lista();
 
     }
-
-
 
     //Controller tela
 
@@ -97,6 +87,8 @@ public class BDPropostaController implements ControlledScreen {
     //Funções
 
     @Autowired
+    FuncionarioService funcionarioService;
+    @Autowired
     PropostaService propostaService;
 
     @Autowired
@@ -107,17 +99,14 @@ public class BDPropostaController implements ControlledScreen {
 
     private void popular_lista(){
 
-
-        Integer id_bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual).getId_bar();
-
-        List<PropostaModel> propostas = propostaService.recebe_proposta_by_id_bar(id_bar);
+        List<PropostaModel> propostas = propostaService.recebe_proposta_func(ScreenController.cod_pessoa_atual);
 
         ObservableList<String> items = FXCollections.observableArrayList();
 
         for(int i = 0; i < propostas.size(); i++){
 
             if(propostas.get(i).getStatus() == 2){
-                items.add(eventoController.getEventoById(propostas.get(i).getId_evento()).getNome());
+                items.add(barController.getNameById(propostas.get(i).getId_bar()));
             }
         }
 
@@ -128,26 +117,21 @@ public class BDPropostaController implements ControlledScreen {
         list_view.setItems(items);
 
     }
-
     private void gera_modal(){
 
         String titulo = list_view.getSelectionModel().getSelectedItem();
 
-        EventoModel eventoModel = eventoController.getEventoByName(titulo);
+        BarModel bar = barController.getBarByName(titulo);
 
-        Integer id_evento = eventoModel.getId_evento();
-
-        List<PropostaModel> propostaModel = propostaService.recebe_proposta_evento(id_evento);
-
-
-        Integer id_bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual).getId_bar();
+        List<PropostaModel> propostaModel = propostaService.recebe_proposta_func(ScreenController.cod_pessoa_atual);
 
         String descricao = "";
+
         Integer id_proposta = 0;
 
         for(int i = 0; i < propostaModel.size(); i++){
 
-            if(propostaModel.get(i).getId_bar() == id_bar){
+            if(titulo.equals(bar.getNome())){
                 descricao = propostaModel.get(i).getDescricao();
                 id_proposta = i;
             }
@@ -175,6 +159,7 @@ public class BDPropostaController implements ControlledScreen {
             if(result.get() == ButtonType.OK){
 
                 propostaService.update_proposta(propostaModel.get(id_proposta).getId_proposta(), 1);
+                funcionarioService.atualiza_func(ScreenController.cod_pessoa_atual, bar.getId_bar());
 
             }else if(result.get() == ButtonType.CANCEL){
 
@@ -189,5 +174,6 @@ public class BDPropostaController implements ControlledScreen {
 
 
     }
+
 
 }

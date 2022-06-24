@@ -145,7 +145,8 @@ public class RegistraPropostaController implements ControlledScreen {
                             ScreenController.cod_pessoa_atual,
                             barController.getIdBarByName(nome_bar),
                             descricao,
-                            eventoController.getEventoByName(nome_evento).getId_evento()
+                            eventoController.getEventoByName(nome_evento).getId_evento(),
+                            "CE"
                     );
 
                     propostaService.enviar_proposta(proposta);

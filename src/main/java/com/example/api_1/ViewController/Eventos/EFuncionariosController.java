@@ -47,6 +47,14 @@ public class EFuncionariosController implements ControlledScreen {
     private ListView<String> list_view;
 
     @FXML
+    void onPropostaPressed(MouseEvent event) {
+
+        controller.loadScreen("propostaFUNC", "/Proposta/Funcionario.fxml", ScreenController.get_ac());
+        controller.setScreen("propostaFUNC");
+
+    }
+
+    @FXML
     void onPressedEventos(MouseEvent event) {
 
     }

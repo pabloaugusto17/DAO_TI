@@ -26,11 +26,24 @@ public class PropostaModel {
     @Column
     private Integer id_evento;
 
-    public PropostaModel(Integer id_contratante, Integer id_bar, String descricao, Integer id_evento) {
-        this.id_contratante = id_contratante;
+    @Column
+    private Integer id_func;
+
+    public PropostaModel(Integer id_geral, Integer id_bar, String descricao, Integer id_evento, String tipo) {
+
+        if(tipo.equals("CE")){
+            this.id_contratante = id_geral;
+        }else if(tipo.equals("FUNC")){
+            this.id_func = id_geral;
+        }
+
         this.id_bar = id_bar;
         this.descricao = descricao;
-        this.id_evento = id_evento;
+
+        if(tipo.equals("CE")){
+            this.id_evento = id_evento;
+        }
+
     }
 
     public PropostaModel(){
