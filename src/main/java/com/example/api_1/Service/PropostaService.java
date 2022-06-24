@@ -64,5 +64,22 @@ public class PropostaService {
 
     }
 
+    public PropostaModel recebe_proposta_evento(Integer id_evento){
+
+        return propostaRepository.recebe_proposta_evento(id_evento);
+
+    }
+
+    public void update_proposta(Integer id_proposta, int valor_update){
+
+        PropostaModel propostaModel = propostaRepository.recebe_proposta(id_proposta);
+
+        propostaModel.setStatus(valor_update);
+
+        propostaRepository.saveAndFlush(propostaModel);
+
+
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.example.api_1.ViewController.Proposta;
 
 import com.example.api_1.Controller.BarController;
+import com.example.api_1.Controller.EventoController;
 import com.example.api_1.Model.BarModel;
 import com.example.api_1.Model.EventoModel;
 import com.example.api_1.Model.PropostaModel;
@@ -9,25 +10,23 @@ import com.example.api_1.ViewInitializer.ControlledScreen;
 import com.example.api_1.ViewInitializer.ScreenController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Line;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
-public class CEPropostaController implements ControlledScreen {
+public class BDPropostaController implements ControlledScreen {
 
     //FXML
     @FXML
@@ -69,8 +68,8 @@ public class CEPropostaController implements ControlledScreen {
     @FXML
     void onPressedRegistraProposta(MouseEvent event) {
 
-        controller.loadScreen("RegistrarPropostaCE", "/Proposta/RegistraProposta.fxml", ScreenController.get_ac());
-        controller.setScreen("RegistrarPropostaCE");
+        /*controller.loadScreen("RegistrarPropostaCE", "/Proposta/RegistraProposta.fxml", ScreenController.get_ac());
+        controller.setScreen("RegistrarPropostaCE");*/
 
     }
 
@@ -100,20 +99,28 @@ public class CEPropostaController implements ControlledScreen {
     @Autowired
     BarController barController;
 
+    @Autowired
+    EventoController eventoController;
+
     private void popular_lista(){
 
-        List<PropostaModel> propostas = propostaService.recebe_proposta_by_id_contratante(ScreenController.cod_pessoa_atual);
+
+        Integer id_bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual).getId_bar();
+
+        List<PropostaModel> propostas = propostaService.recebe_proposta_by_id_bar(id_bar);
 
         ObservableList<String> items = FXCollections.observableArrayList();
 
         for(int i = 0; i < propostas.size(); i++){
-            items.add(barController.getNameById(propostas.get(i).getId_bar()));
+
+            if(propostas.get(i).getStatus() == 0){
+                items.add(eventoController.getEventoById(propostas.get(i).getId_evento()).getNome());
+            }
         }
 
         if(items.isEmpty()){
-            items.add("Sem propostas registrados");
+            items.add("Sem propostas recebidas");
         }
-
 
         list_view.setItems(items);
 
@@ -123,52 +130,48 @@ public class CEPropostaController implements ControlledScreen {
 
         String titulo = list_view.getSelectionModel().getSelectedItem();
 
-        Integer bar_analisar = barController.getIdBarByName(titulo);
+        EventoModel eventoModel = eventoController.getEventoByName(titulo);
 
-        PropostaModel proposta = propostaService.recebe_proposta(bar_analisar, ScreenController.cod_pessoa_atual);
+        Integer id_evento = eventoModel.getId_evento();
 
-
-
-        if(!titulo.equals("Sem propostas registrados")){
-
-            int info = proposta.getStatus();
-
-            String info_proposta = "PENDENTE";
+        PropostaModel propostaModel = propostaService.recebe_proposta_evento(id_evento);
 
 
-            if(info == 1){
-                info_proposta = "ACEITA";
-            }else if(info == 2){
-                info_proposta = "RECUSADA";
+        if(!titulo.equals("Sem propostas recebidas")){
+
+            Stage stage = (Stage) anchor_pane.getScene().getWindow();
+
+            String descricao = propostaModel.getDescricao();
+
+            Alert.AlertType type = Alert.AlertType.CONFIRMATION;
+
+            Alert alert = new Alert(type, "");
+
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+
+            alert.getDialogPane().setContentText("Deseja aceitar proposta?");
+
+            alert.getDialogPane().setHeaderText(descricao);
+
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if(result.get() == ButtonType.OK){
+
+                propostaService.update_proposta(propostaModel.getId_proposta(), 1);
+
+            }else if(result.get() == ButtonType.CANCEL){
+
+                propostaService.update_proposta(propostaModel.getId_proposta(), 2);
+
             }
 
 
-
-            TextArea textArea = new TextArea();
-            textArea.setText("Informações da Proposta: \n" +
-                    "Descrição: " + proposta.getDescricao() +
-                    "\nProposta " + info_proposta);
-            textArea.setEditable(false);
-            textArea.setWrapText(true);
-            textArea.setPrefSize(400, 200);
-            textArea.setStyle("-fx-text-fill:#F7A34A");
-
-
-            Scene scene = new Scene(textArea);
-            Stage stage = new Stage();
-
-            if (titulo != null) {
-                stage.setTitle(titulo);
-            }
-
-            scene.getStylesheets().add("Proposta/StyleProposta.css");
-            stage.setScene(scene);
-            stage.initModality(Modality.NONE);
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
 
         }
 
 
+
     }
+
 }

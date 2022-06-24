@@ -55,8 +55,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Pane fx:id="pane_2" layoutX="842.0" layoutY="257.0" prefHeight="228.0" prefWidth="450.0" />
-      <Label fx:id="label_5" layoutX="440.0" layoutY="31.0" text="Proposta">
+      <Label fx:id="label_5" layoutX="440.0" layoutY="31.0" onMousePressed="#onPressedProposta" text="Proposta">
          <font>
             <Font size="30.0" />
          </font>

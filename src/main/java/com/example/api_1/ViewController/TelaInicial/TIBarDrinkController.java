@@ -58,9 +58,6 @@ public class TIBarDrinkController implements ControlledScreen {
     private Pane pane_1;
 
     @FXML
-    private Pane pane_2;
-
-    @FXML
     void onButtonVejaEventosPressed(MouseEvent event) {
         controller.loadScreen("eventosBarDrink", "/Eventos/BarDrink.fxml", ScreenController.get_ac());
         controller.setScreen("eventosBarDrink");
@@ -71,6 +68,14 @@ public class TIBarDrinkController implements ControlledScreen {
 
         controller.loadScreen("eventosBarDrink", "/Eventos/BarDrink.fxml", ScreenController.get_ac());
         controller.setScreen("eventosBarDrink");
+    }
+
+    @FXML
+    void onPressedProposta(MouseEvent event) {
+
+        controller.loadScreen("BDProposta", "/Proposta/BarDrink.fxml", ScreenController.get_ac());
+        controller.setScreen("BDProposta");
+
     }
 
     @FXML
@@ -94,12 +99,12 @@ public class TIBarDrinkController implements ControlledScreen {
         bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual);
         String nome_bar = bar.getNome();
         Integer id_bar = bar.getId_bar();
-        int quant_eventos = barController.getQuantEventos(id_bar);
+        //int quant_eventos = barController.getQuantEventos(id_bar);
         double avaliacao_bar = bar.getAvaliacao();
 
         label_1.setText("Olá, " + nome_bar);
         label_nome.setText(nome_bar);
-        label_eventos.setText(label_eventos.getText() + " " + quant_eventos);
+        //label_eventos.setText(label_eventos.getText() + " " + quant_eventos);
         label_avaliacao.setText(label_avaliacao.getText() + " " + avaliacao_bar);
 
     }

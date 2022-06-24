@@ -71,4 +71,11 @@ public class EventoController {
         return null;
     }
 
+    @GetMapping("/getEventoById{id}")
+    public EventoModel getEventoById(@PathVariable Integer id){
+
+        return eventoService.get_evento(id);
+
+    }
+
 }
