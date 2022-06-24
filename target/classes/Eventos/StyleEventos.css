@@ -1,0 +1,69 @@
+#anchor_pane{
+
+    -fx-background-color: #110E0E;
+}
+
+#list_view{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+
+    -fx-background-color:#110E0E;
+    -fx-text-fill: #F7A34A;
+}
+.list-cell { -fx-text-fill: #F7A34A; }
+.list-cell:odd { -fx-background-color: #110E0E;  }
+.list-cell:even { -fx-background-color: #110E0E;}
+.list-cell:filled:hover {
+    -fx-background-color: white; /* 2 */
+    -fx-text-fill: black; /* 5 */
+}
+
+.text-area .content{
+    -fx-background-color: #110E0E;
+}
+
+#label_3, #label_2, #label_4{
+
+    -fx-text-fill: #F7A34A;
+}
+
+#button_registrar_evento{
+
+    -fx-background-color: #110E0E;
+    -fx-border-color: #F7A34A;
+    -fx-text-fill: #F7A34A;
+}
+
+#button_registrar_evento:hover{
+
+    -fx-background-color:white;
+    -fx-text-fill: #110E0E;
+    
+}
+
+#pane_1{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+
+}
+
+#nome_field, #endereco_field, #hora_inicio_field, #quant_participantes_field, #duracao_field, #data_evento_field
+{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+    -fx-prompt-text-fill: #F7A34A;
+    -fx-text-fill: #F7A34A;
+
+}
+
+#label_obs{
+
+    -fx-text-fill: #F7A34A;
+}

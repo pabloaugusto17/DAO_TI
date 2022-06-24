@@ -1,0 +1,34 @@
+2022-06-13 09:42:23,351 INFO org.springframework.boot.SpringApplication {1.} {JavaFX-Launcher} Starting application using Java 13.0.11 on LAPTOP-DSNGDJK1 with PID 9940 (started by Pablo in E:\DAO_TI\DAO_TI)
+2022-06-13 09:42:23,358 INFO org.springframework.boot.SpringApplication {1.} {JavaFX-Launcher} No active profile set, falling back to 1 default profile: "default"
+2022-06-13 09:42:24,836 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {1.} {JavaFX-Launcher} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-13 09:42:24,943 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {1.} {JavaFX-Launcher} Finished Spring Data repository scanning in 95 ms. Found 7 JPA repository interfaces.
+2022-06-13 09:42:26,380 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {1.} {JavaFX-Launcher} Tomcat initialized with port(s): 8080 (http)
+2022-06-13 09:42:26,403 INFO org.apache.coyote.http11.Http11NioProtocol {1.} {JavaFX-Launcher} Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-13 09:42:26,403 INFO org.apache.catalina.core.StandardService {1.} {JavaFX-Launcher} Starting service [Tomcat]
+2022-06-13 09:42:26,403 INFO org.apache.catalina.core.StandardEngine {1.} {JavaFX-Launcher} Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-13 09:42:26,954 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {1.} {JavaFX-Launcher} Initializing Spring embedded WebApplicationContext
+2022-06-13 09:42:26,954 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {1.} {JavaFX-Launcher} Root WebApplicationContext: initialization completed in 3525 ms
+2022-06-13 09:42:27,133 INFO com.zaxxer.hikari.HikariDataSource {1.} {JavaFX-Launcher} HikariPool-1 - Starting...
+2022-06-13 09:42:27,381 INFO com.zaxxer.hikari.HikariDataSource {1.} {JavaFX-Launcher} HikariPool-1 - Start completed.
+2022-06-13 09:42:27,437 INFO org.hibernate.jpa.internal.util.LogHelper {1.} {JavaFX-Launcher} HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-13 09:42:27,532 INFO org.hibernate.Version {1.} {JavaFX-Launcher} HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-13 09:42:28,048 INFO org.hibernate.annotations.common.Version {1.} {JavaFX-Launcher} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-13 09:42:28,239 INFO org.hibernate.dialect.Dialect {1.} {JavaFX-Launcher} HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-13 09:42:29,088 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {1.} {JavaFX-Launcher} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-13 09:42:29,096 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {1.} {JavaFX-Launcher} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-13 09:42:29,952 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {1.} {JavaFX-Launcher} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-13 09:42:30,352 INFO org.apache.coyote.http11.Http11NioProtocol {1.} {JavaFX-Launcher} Starting ProtocolHandler ["http-nio-8080"]
+2022-06-13 09:42:30,488 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {1.} {JavaFX-Launcher} Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-13 09:42:30,602 INFO org.springframework.boot.SpringApplication {1.} {JavaFX-Launcher} Started application in 7.847 seconds (JVM running for 14.133)
+2022-06-13 09:42:30,802 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:31,933 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:31,958 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:31,989 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:32,007 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:40,678 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:41,705 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:42,946 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:43,116 WARN javafx {1.} {JavaFX Application Thread} Loading FXML document with JavaFX API of version 18 by JavaFX runtime of version 13.0.2
+2022-06-13 09:42:45,519 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {1.} {JavaFX Application Thread} Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-13 09:42:45,522 INFO com.zaxxer.hikari.HikariDataSource {1.} {JavaFX Application Thread} HikariPool-1 - Shutdown initiated...
+2022-06-13 09:42:45,541 INFO com.zaxxer.hikari.HikariDataSource {1.} {JavaFX Application Thread} HikariPool-1 - Shutdown completed.

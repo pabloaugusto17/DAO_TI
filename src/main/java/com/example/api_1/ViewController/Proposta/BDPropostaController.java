@@ -134,14 +134,27 @@ public class BDPropostaController implements ControlledScreen {
 
         Integer id_evento = eventoModel.getId_evento();
 
-        PropostaModel propostaModel = propostaService.recebe_proposta_evento(id_evento);
+        List<PropostaModel> propostaModel = propostaService.recebe_proposta_evento(id_evento);
+
+
+        Integer id_bar = barController.getBarByDinamicId(ScreenController.cod_pessoa_atual).getId_bar();
+
+        String descricao = "";
+        Integer id_proposta = 0;
+
+        for(int i = 0; i < propostaModel.size(); i++){
+
+            if(propostaModel.get(i).getId_bar() == id_bar){
+                descricao = propostaModel.get(i).getDescricao();
+                id_proposta = i;
+            }
+
+        }
 
 
         if(!titulo.equals("Sem propostas recebidas")){
 
             Stage stage = (Stage) anchor_pane.getScene().getWindow();
-
-            String descricao = propostaModel.getDescricao();
 
             Alert.AlertType type = Alert.AlertType.CONFIRMATION;
 
@@ -158,11 +171,11 @@ public class BDPropostaController implements ControlledScreen {
 
             if(result.get() == ButtonType.OK){
 
-                propostaService.update_proposta(propostaModel.getId_proposta(), 1);
+                propostaService.update_proposta(propostaModel.get(id_proposta).getId_proposta(), 1);
 
             }else if(result.get() == ButtonType.CANCEL){
 
-                propostaService.update_proposta(propostaModel.getId_proposta(), 2);
+                propostaService.update_proposta(propostaModel.get(id_proposta).getId_proposta(), 2);
 
             }
 

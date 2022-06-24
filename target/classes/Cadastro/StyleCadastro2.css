@@ -1,0 +1,23 @@
+#anchor_pane{
+
+    -fx-background-color: #110E0E;
+}
+
+#pane_1{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+
+}
+
+#label_1{
+    -fx-text-fill: #F7A34A;
+}
+
+#button_funcionario, #button_bar_drink, #button_contratante_evento{
+
+    -fx-background-color:#110E0E;
+    -fx-text-fill: #F7A34A;
+    -fx-border-color: #F7A34A;
+
+}

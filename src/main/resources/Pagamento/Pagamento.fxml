@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="fundo" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #110E0E;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.api_1.ViewController.Pagamento.PPagamentoController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <Label layoutX="544.0" layoutY="200.0" text="Qual o metodo de pagamento?" textFill="#f7a34a" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="200.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="pix_box" layoutX="544.0" layoutY="259.0" mnemonicParsing="false" text="Pix" textFill="#f7a34a" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="259.0" />
+        <CheckBox fx:id="cartao_box" layoutX="544.0" layoutY="310.0" mnemonicParsing="false" text="Cartão de Credito" textFill="#f7a34a" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="297.0" />
+        <CheckBox fx:id="boleto_box" layoutX="544.0" layoutY="351.0" mnemonicParsing="false" text="Boleto" textFill="#f7a34a" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="335.0" />
+        <Label layoutX="69.0" layoutY="287.0" text="Nome do destinatário:" textFill="#f7a34a">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="destinatario_field" layoutX="69.0" layoutY="333.0" style="-fx-border-color: #f7a34a; -fx-background-color: #150A0A; -fx-text-fill: #FFFFFF;" />
+      <Line fx:id="line_1" endX="1139.0" layoutX="228.0" layoutY="112.0" startX="-227.0" stroke="#f7a34a" />
+      <Label fx:id="label_2" layoutX="606.0" layoutY="41.0" onMousePressed="#OnHomePressed" text="Home" textFill="#f7a34a">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_3" layoutX="730.0" layoutY="41.0" onMousePressed="#OnEventosPressed" text="Eventos" textFill="#f7a34a">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_4" layoutX="450.0" layoutY="41.0" onMousePressed="#OnPropostaPressed" text="Proposta" textFill="#f7a34a">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="377.0" text="Valor:" textFill="#f7a34a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="valor_field" layoutX="69.0" layoutY="419.0" style="-fx-border-color: #f7a34a; -fx-background-color: #150A0A; -fx-text-fill: #FFFFFF;" />
+      <Button layoutX="1082.0" layoutY="650.0" mnemonicParsing="false" onMousePressed="#OnRealizarPagametoPressed" style="-fx-background-color: #110E0E; -fx-border-color: #f7a34a;" text="Realizar Pagamento" textFill="#f7a34a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

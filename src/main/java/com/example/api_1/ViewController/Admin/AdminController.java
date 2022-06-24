@@ -2,6 +2,7 @@ package com.example.api_1.ViewController.Admin;
 
 import com.example.api_1.Model.EventoModel;
 import com.example.api_1.Repository.EventoRepository;
+import com.example.api_1.Repository.PagamentoRepository;
 import com.example.api_1.Repository.PessoaRepository;
 import com.example.api_1.ViewInitializer.ControlledScreen;
 import com.example.api_1.ViewInitializer.ScreenController;
@@ -73,13 +74,10 @@ public class AdminController implements ControlledScreen {
         ObservableList<String> items = FXCollections.observableArrayList();
 
         items.add("Cadastros na semana");
-        items.add("Avaliações feitas por semana");
         items.add("Eventos por semana");
         items.add("Pagamentos por semana");
 
         list_view.setItems(items);
-
-
 
     }
 
@@ -88,6 +86,9 @@ public class AdminController implements ControlledScreen {
 
     @Autowired
     EventoRepository eventoRepository;
+
+    @Autowired
+    PagamentoRepository pagamentoRepository;
 
     private void mostra_querry(String querry_selecionada){
 
@@ -110,6 +111,14 @@ public class AdminController implements ControlledScreen {
             double porcentagem = ( (double)quant_mes / (double)quant_total ) * 100;
 
             System.out.println(porcentagem + "%");
+
+        }
+
+        if(querry_selecionada.equals("Pagamentos por Semana")){
+
+            Integer quant_pg = pagamentoRepository.quant_pagamentos();
+
+            System.out.println(quant_pg);
 
         }
 

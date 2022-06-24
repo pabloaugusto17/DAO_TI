@@ -20,7 +20,7 @@ public interface PropostaRepository extends JpaRepository<PropostaModel, Integer
     Integer retorna_id_proposta(Integer id_ce, Integer id_bar);
 
     @Query(nativeQuery = true, value = "SELECT  * FROM proposta WHERE id_evento = (:id_evento)")
-    PropostaModel recebe_proposta_evento(Integer id_evento);
+    List<PropostaModel> recebe_proposta_evento(Integer id_evento);
 
     @Query(nativeQuery = true, value = "SELECT  * FROM proposta WHERE id_proposta = (:id_proposta)")
     PropostaModel recebe_proposta(Integer id_proposta);

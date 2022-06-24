@@ -1,0 +1,33 @@
+#anchor_pane{
+	
+	-fx-background-color: #110E0E;
+}
+
+#pane_1{
+	
+	-fx-background-color: #150A0A;
+	-fx-border-color: #F7A34A;
+		
+}
+
+#button_prosseguir, #button_voltar{
+	
+	-fx-background-color:#110E0E;
+	-fx-text-fill: #F7A34A;
+	-fx-border-color: #F7A34A;
+	
+}
+
+#label_1{
+	-fx-text-fill: #F7A34A;
+}
+
+#nome_field, #cpf_field, #senha_field, #telefone_field, #endereco_field, #email_field, #cnpj_field, #descricao_field, #cep_field{
+	
+	-fx-background-color:#110E0E;
+	-fx-text-fill: #F7A34A;
+	-fx-border-color: #F7A34A;
+	-fx-prompt-text-fill: #F7A34A;
+	
+	
+}

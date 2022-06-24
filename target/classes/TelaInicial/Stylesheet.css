@@ -1,0 +1,38 @@
+#anchor_pane{
+
+    -fx-background-color: #110E0E;
+}
+
+#button_vejaEventos, #button_registrar{
+
+    -fx-background-color:#110E0E;
+    -fx-text-fill: #F7A34A;
+    -fx-border-color: #F7A34A;
+}
+
+#button_vejaEventos:hover, #button_registrar:hover{
+
+    -fx-background-color:white;
+    -fx-text-fill: #110E0E;
+
+}
+
+#pane_1, #pane_2{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+
+}
+
+#line_1{
+
+    -fx-stroke: #F7A34A;
+
+}
+
+#label_1, #label_2, #label_3, #label_nome, #label_eventos, #label_preco_hora, #label_avaliacao
+, #label_4, #label_5{
+
+    -fx-text-fill: #F7A34A;
+}
+

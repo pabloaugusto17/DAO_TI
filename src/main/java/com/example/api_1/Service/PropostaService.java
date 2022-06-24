@@ -64,7 +64,7 @@ public class PropostaService {
 
     }
 
-    public PropostaModel recebe_proposta_evento(Integer id_evento){
+    public List<PropostaModel> recebe_proposta_evento(Integer id_evento){
 
         return propostaRepository.recebe_proposta_evento(id_evento);
 

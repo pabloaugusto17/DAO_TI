@@ -19,10 +19,14 @@ public class PagamentoModel {
     @Column (name = "valor")
     private double valor;
 
-    public PagamentoModel(Integer id_remetente, Integer id_destinatario, double valor) {
+    @Column
+    private String tipo;
+
+    public PagamentoModel(Integer id_remetente, Integer id_destinatario, double valor, String tipo) {
         this.id_remetente = id_remetente;
         this.id_destinatario = id_destinatario;
         this.valor = valor;
+        this.tipo = tipo;
     }
 
     public PagamentoModel() {

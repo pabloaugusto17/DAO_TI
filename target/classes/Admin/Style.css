@@ -1,0 +1,32 @@
+#anchor_pane{
+
+    -fx-background-color: #110E0E;
+}
+
+#list_view{
+
+    -fx-background-color: #150A0A;
+    -fx-border-color: #F7A34A;
+    -fx-font-size: 25;
+
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+
+    -fx-background-color:#110E0E;
+    -fx-text-fill: #F7A34A;
+}
+.list-cell { -fx-text-fill: #F7A34A; }
+.list-cell:odd { -fx-background-color: #110E0E;  }
+.list-cell:even { -fx-background-color: #110E0E;}
+.list-cell:filled:hover {
+    -fx-background-color: white; /* 2 */
+    -fx-text-fill: black; /* 5 */
+}
+#button_voltar{
+
+    -fx-background-color:#110E0E;
+    -fx-text-fill: #F7A34A;
+    -fx-border-color: #F7A34A;
+
+}
