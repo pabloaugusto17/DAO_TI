@@ -18,22 +18,12 @@
       </Button>
       <Pane fx:id="pane_1" layoutX="82.0" layoutY="257.0" prefHeight="228.0" prefWidth="450.0">
          <children>
-            <Label fx:id="label_eventos" layoutX="196.0" layoutY="90.0" text="Quantidade Eventos:">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <Label fx:id="label_nome" layoutX="196.0" layoutY="50.0" text="NOME">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="label_preco_hora" layoutX="196.0" layoutY="119.0" text="Preço Hora:">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="label_avaliacao" layoutX="196.0" layoutY="147.0" text="Avaliação: ">
+            <Label fx:id="label_preco_hora" layoutX="196.0" layoutY="91.0" text="Preço Hora:">
                <font>
                   <Font size="20.0" />
                </font>

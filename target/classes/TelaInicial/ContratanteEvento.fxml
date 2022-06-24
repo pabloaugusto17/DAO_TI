@@ -69,7 +69,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="label_pagamento" layoutX="870.0" layoutY="31.0" onMousePressed="#onPressedPg" text="Pagamento">
+      <Label fx:id="label_pagamento" layoutX="862.0" layoutY="31.0" onMousePressed="#onPressedPg" text="Pagamento">
          <font>
             <Font size="30.0" />
          </font>

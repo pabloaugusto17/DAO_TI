@@ -26,17 +26,17 @@
         </Label>
         <TextField fx:id="destinatario_field" layoutX="69.0" layoutY="241.0" style="-fx-border-color: #f7a34a; -fx-background-color: #150A0A; -fx-text-fill: #FFFFFF;" />
       <Line fx:id="line_1" endX="1139.0" layoutX="228.0" layoutY="112.0" startX="-227.0" stroke="#f7a34a" />
-      <Label fx:id="label_2" layoutX="606.0" layoutY="41.0" text="Home" textFill="#f7a34a">
+      <Label fx:id="label_2" layoutX="606.0" layoutY="41.0" onMousePressed="#onHomePressed" text="Home" textFill="#f7a34a">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="label_3" layoutX="730.0" layoutY="41.0" text="Eventos" textFill="#f7a34a">
+      <Label fx:id="label_3" layoutX="730.0" layoutY="41.0" onMousePressed="#onEventoPressed" text="Eventos" textFill="#f7a34a">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="label_4" layoutX="450.0" layoutY="41.0" text="Proposta" textFill="#f7a34a">
+      <Label fx:id="label_4" layoutX="450.0" layoutY="41.0" onMousePressed="#onPropostaPressed" text="Proposta" textFill="#f7a34a">
          <font>
             <Font size="30.0" />
          </font>
@@ -52,5 +52,10 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Label fx:id="label_pagamento" layoutX="872.0" layoutY="41.0" onMousePressed="#onPressedPg" text="Pagamento" textFill="#f7a34a">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

@@ -42,11 +42,6 @@ public class TIBarDrinkController implements ControlledScreen {
     @FXML
     private Label label_5;
 
-    @FXML
-    private Label label_avaliacao;
-
-    @FXML
-    private Label label_eventos;
 
     @FXML
     private Label label_nome;
@@ -105,7 +100,7 @@ public class TIBarDrinkController implements ControlledScreen {
         label_1.setText("Olá, " + nome_bar);
         label_nome.setText(nome_bar);
         //label_eventos.setText(label_eventos.getText() + " " + quant_eventos);
-        label_avaliacao.setText(label_avaliacao.getText() + " " + avaliacao_bar);
+        //label_avaliacao.setText(label_avaliacao.getText() + " " + avaliacao_bar);
 
     }
 

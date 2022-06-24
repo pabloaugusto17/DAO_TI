@@ -58,18 +58,20 @@ public class BDPropostaController implements ControlledScreen {
     @FXML
     void onPressedEventos(MouseEvent event) {
 
+        controller.loadScreen("eventosBarDrink", "/Eventos/BarDrink.fxml", ScreenController.get_ac());
+        controller.setScreen("eventosBarDrink");
+
     }
 
     @FXML
     void onPressedHome(MouseEvent event) {
-
+        controller.setScreen("dashboardBarDrink");
     }
 
     @FXML
     void onPressedRegistraProposta(MouseEvent event) {
 
-        /*controller.loadScreen("RegistrarPropostaCE", "/Proposta/RegistraProposta.fxml", ScreenController.get_ac());
-        controller.setScreen("RegistrarPropostaCE");*/
+
 
     }
 

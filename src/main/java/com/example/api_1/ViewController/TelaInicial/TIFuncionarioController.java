@@ -44,13 +44,6 @@ public class TIFuncionarioController implements ControlledScreen{
     @FXML
     private Label label_5;
 
-
-    @FXML
-    private Label label_avaliacao;
-
-    @FXML
-    private Label label_eventos;
-
     @FXML
     private Label label_nome;
 
@@ -72,7 +65,6 @@ public class TIFuncionarioController implements ControlledScreen{
     private BarController barController;
     ScreenController controller;
 
-
     @Override
     public void setScreenParent(ScreenController screenPage) {
         controller = screenPage;
@@ -83,7 +75,6 @@ public class TIFuncionarioController implements ControlledScreen{
     void onButtonVejaEventosPressed(MouseEvent event) {
 
         controller.loadScreen("telavejaeventosFuncionario", "/Eventos/Funcionarios.fxml", ScreenController.get_ac());
-
         controller.setScreen("telavejaeventosFuncionario");
 
     }
@@ -99,8 +90,8 @@ public class TIFuncionarioController implements ControlledScreen{
 
         label_1.setText("Olá, " + pessoaController.getPessoaByIdDynamic(ScreenController.cod_pessoa_atual).getNome());
         label_nome.setText(pessoaController.getPessoaByIdDynamic(ScreenController.cod_pessoa_atual).getNome());
-        label_eventos.setText(label_eventos.getText() + " " + funcionariosController.get_quantidade_eventos(ScreenController.cod_pessoa_atual));
-        label_avaliacao.setText(label_avaliacao.getText() + " " + funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual).getAvaliacao());
+        //label_eventos.setText(label_eventos.getText() + " " + funcionariosController.get_quantidade_eventos(ScreenController.cod_pessoa_atual));
+        //label_avaliacao.setText(label_avaliacao.getText() + " " + funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual).getAvaliacao());
         label_preco_hora.setText(label_preco_hora.getText() + " " + funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual).getPreco_hora());
 
         String name = barController.getNameById(funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual).getCnpj_barEvento());
@@ -115,6 +106,7 @@ public class TIFuncionarioController implements ControlledScreen{
 
     @FXML
     void onPressedEventos(MouseEvent event) {
+        controller.loadScreen("telavejaeventosFuncionario", "/Eventos/Funcionarios.fxml", ScreenController.get_ac());
         controller.setScreen("telavejaeventosFuncionario");
     }
 

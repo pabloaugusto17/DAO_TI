@@ -71,6 +71,14 @@ public class EBarDrinkController implements ControlledScreen {
     }
 
     @FXML
+    void onPropostaPressed(MouseEvent event) {
+
+        controller.loadScreen("BDProposta", "/Proposta/BarDrink.fxml", ScreenController.get_ac());
+        controller.setScreen("BDProposta");
+
+    }
+
+    @FXML
     void onPressedEventos(MouseEvent event) {
 
 

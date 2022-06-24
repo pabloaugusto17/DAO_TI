@@ -6,6 +6,7 @@ import com.example.api_1.Controller.EventoController;
 import com.example.api_1.Controller.FuncionariosController;
 import com.example.api_1.Model.BarModel;
 import com.example.api_1.Model.EventoModel;
+import com.example.api_1.Model.FuncionariosModel;
 import com.example.api_1.ViewInitializer.ScreenController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,14 +51,23 @@ class EventosGeral {
 
             if (tipo.equals("Funcionario")){
 
-                if(lista_eventos.get(i).getId_bar_evento().equals(funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual).getCnpj_barEvento())){
-                    items.add(lista_eventos.get(i).getNome());
+                //Pegar os eventos no qual o funcionario trabalhou
+                FuncionariosModel funcionariosModel = funcionariosController.getByDinamicId(ScreenController.cod_pessoa_atual);
+                if(funcionariosModel.getCnpj_barEvento() != null){
+
+                    Integer id_bar = funcionariosModel.getCnpj_barEvento();
+
+                    if(lista_eventos.get(i).getId_bar_evento() == id_bar){
+                        items.add(lista_eventos.get(i).getNome());
+                    }
+
                 }
+
             }
 
             if(tipo.equals("Bar")){
 
-                if(lista_eventos.get(i).getId_bar_evento().equals(bar.getId_bar())){
+                if(lista_eventos.get(i).getId_bar_evento() == bar.getId_bar()){
                     items.add(lista_eventos.get(i).getNome());
                 }
 
@@ -112,7 +122,7 @@ class EventosGeral {
                 stage.setTitle(titulo);
             }
 
-            scene.getStylesheets().add("Eventos/StyleEventos.css");
+            scene.getStylesheets().add("/Eventos/StyleEventos.css");
             stage.setScene(scene);
             stage.initModality(Modality.NONE);
             stage.initStyle(StageStyle.UTILITY);

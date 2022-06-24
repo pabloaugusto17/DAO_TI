@@ -18,19 +18,9 @@
       </Button>
       <Pane fx:id="pane_1" layoutX="82.0" layoutY="257.0" prefHeight="228.0" prefWidth="450.0">
          <children>
-            <Label fx:id="label_eventos" layoutX="196.0" layoutY="90.0" text="Quantidade Eventos:">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <Label fx:id="label_nome" layoutX="196.0" layoutY="50.0" text="NOME">
                <font>
                   <Font size="25.0" />
-               </font>
-            </Label>
-            <Label fx:id="label_avaliacao" layoutX="196.0" layoutY="120.0" text="Avaliação: ">
-               <font>
-                  <Font size="20.0" />
                </font>
             </Label>
             <ImageView fx:id="image_ex" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PagamentoRepository extends JpaRepository<PagamentoModel, Integer> {
 
-    @Query(nativeQuery = true, value = "SELECT COUNT(id_pagamento) AS cont FROM pagamento GROUP BY id_pagemtno")
+    @Query(nativeQuery = true, value = "SELECT COUNT(id_pagamento) AS cont FROM pagamento;")
     Integer quant_pagamentos();
 
 }

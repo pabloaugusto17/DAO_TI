@@ -114,7 +114,7 @@ public class AdminController implements ControlledScreen {
 
         }
 
-        if(querry_selecionada.equals("Pagamentos por Semana")){
+        if(querry_selecionada.equals("Pagamentos por semana")){
 
             Integer quant_pg = pagamentoRepository.quant_pagamentos();
 
