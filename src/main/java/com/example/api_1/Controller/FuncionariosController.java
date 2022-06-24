@@ -3,9 +3,11 @@ package com.example.api_1.Controller;
 import com.example.api_1.Model.BarModel;
 import com.example.api_1.Model.EventoModel;
 import com.example.api_1.Model.FuncionariosModel;
+import com.example.api_1.Model.PessoaModel;
 import com.example.api_1.Service.BarService;
 import com.example.api_1.Service.EventoService;
 import com.example.api_1.Service.FuncionarioService;
+import com.example.api_1.Service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
@@ -19,7 +21,8 @@ import java.util.List;
 public class FuncionariosController {
 
 
-
+    @Autowired
+    PessoaService pessoaService;
     @Autowired
     FuncionarioService funcionario_service;
 
@@ -109,6 +112,26 @@ public class FuncionariosController {
     public FuncionariosModel getByDinamicId(@PathVariable Integer id){
 
         return funcionario_service.get_funcionario(id);
+
+    }
+
+    @GetMapping("/getFuncByName{name}")
+    public Integer getFuncByName(@PathVariable String name){
+
+        List<PessoaModel> pessoas = pessoaService.listar_todas_pessoas();
+
+        for(int i = 0; i < pessoas.size(); i++){
+
+            if(pessoas.get(i).getNome().equals(name)){
+
+                return pessoas.get(i).getId_pessoa();
+
+            }
+
+        }
+
+        return -1;
+
 
     }
 }

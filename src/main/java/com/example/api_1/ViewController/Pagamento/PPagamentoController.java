@@ -2,6 +2,7 @@ package com.example.api_1.ViewController.Pagamento;
 
 import com.example.api_1.Controller.FuncionariosController;
 import com.example.api_1.Controller.PagamentoController;
+import com.example.api_1.Controller.PessoaController;
 import com.example.api_1.Model.FuncionariosModel;
 import com.example.api_1.Model.PagamentoModel;
 import com.example.api_1.ViewInitializer.ControlledScreen;
@@ -51,18 +52,25 @@ public class PPagamentoController implements ControlledScreen {
     private TextField valor_field;
 
     @FXML
-    void OnEventosPressed(MouseEvent event) {
+    void onEventoPressed(MouseEvent event) {
+        controller.loadScreen("RegistraEvento", "/Eventos/RegistraEvento.fxml", ScreenController.get_ac());
+        controller.setScreen("RegistraEvento");
+    }
+
+    @FXML
+    void onHomePressed(MouseEvent event) {
+        controller.setScreen("dashboardCE");
+    }
+
+    @FXML
+    void onPressedPg(MouseEvent event) {
 
     }
 
     @FXML
-    void OnHomePressed(MouseEvent event) {
-
-    }
-
-    @FXML
-    void OnPropostaPressed(MouseEvent event) {
-
+    void onPropostaPressed(MouseEvent event) {
+        controller.loadScreen("PropostaCE", "/Proposta/ContratanteEvento.fxml", ScreenController.get_ac());
+        controller.setScreen("PropostaCE");
     }
 
     @FXML
@@ -93,12 +101,16 @@ public class PPagamentoController implements ControlledScreen {
     @Autowired
     private PagamentoController pagamentoController;
 
+    @Autowired
+    private PessoaController pessoaController;
+
     private void realiza_pagamento(){
 
 
         String id_func = destinatario_field.getText();
 
-        int id_func_cnv = Integer.parseInt(id_func);
+        int id_func_cnv = funcionariosController.getFuncByName(id_func);
+
 
         if(id_func_cnv > 0 && id_func_cnv < 999){
 
@@ -122,6 +134,8 @@ public class PPagamentoController implements ControlledScreen {
                 id_func_cnv, valor, tipo);
 
                 pagamentoController.add_pagamento(pagamentoModel);
+
+                controller.setScreen("dashboardCE");
 
             }
 

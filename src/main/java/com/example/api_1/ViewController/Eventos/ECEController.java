@@ -64,6 +64,18 @@ public class ECEController implements ControlledScreen {
     }
 
     @FXML
+    void onPressedPg(MouseEvent event) {
+        controller.loadScreen("PagamentoGeral", "/Pagamento/Pagamento.fxml", ScreenController.get_ac());
+        controller.setScreen("PagamentoGeral");
+    }
+
+    @FXML
+    void onPressedProposta(MouseEvent event) {
+        controller.loadScreen("PropostaCE", "/Proposta/ContratanteEvento.fxml", ScreenController.get_ac());
+        controller.setScreen("PropostaCE");
+    }
+
+    @FXML
     public void initialize(){
 
         popular_lista();

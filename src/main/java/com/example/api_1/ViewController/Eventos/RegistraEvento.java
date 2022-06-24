@@ -77,7 +77,8 @@ public class RegistraEvento implements ControlledScreen {
 
                         EventoModel evento_registrar = new EventoModel
                                 (id_ce, nome, endereco, hora_inicio,
-                                Integer.parseInt(quantidade_participantes), Double.parseDouble(duracao));
+                                Integer.parseInt(quantidade_participantes), Double.parseDouble(duracao),
+                                        data_evento);
 
                         eventoController.add_ce(evento_registrar);
 

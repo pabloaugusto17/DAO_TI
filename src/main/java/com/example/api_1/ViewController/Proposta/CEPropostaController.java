@@ -58,12 +58,13 @@ public class CEPropostaController implements ControlledScreen {
 
     @FXML
     void onPressedEventos(MouseEvent event) {
-
+        controller.loadScreen("EventosCE", "/Eventos/ContratanteEvento.fxml", ScreenController.get_ac());
+        controller.setScreen("EventosCE");
     }
 
     @FXML
     void onPressedHome(MouseEvent event) {
-
+        controller.setScreen("dashboardCE");
     }
 
     @FXML
@@ -72,6 +73,12 @@ public class CEPropostaController implements ControlledScreen {
         controller.loadScreen("RegistrarPropostaCE", "/Proposta/RegistraProposta.fxml", ScreenController.get_ac());
         controller.setScreen("RegistrarPropostaCE");
 
+    }
+
+    @FXML
+    void onPressedPg(MouseEvent event) {
+        controller.loadScreen("PagamentoGeral", "/Pagamento/Pagamento.fxml", ScreenController.get_ac());
+        controller.setScreen("PagamentoGeral");
     }
 
     @FXML

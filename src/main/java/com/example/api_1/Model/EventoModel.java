@@ -36,33 +36,17 @@ public class EventoModel {
     @Column
     private String data_evento;
 
-    public EventoModel(Integer id_bar_evento, Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao) {
-        this.id_bar_evento = id_bar_evento;
+    public EventoModel(Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao, String data_evento) {
+
         this.id_contratante_evento = id_contratante_evento;
         this.nome = nome;
         this.endereco = endereco;
         this.hora_inicio = hora_inicio;
         this.quantidade_participantes = quantidade_participantes;
         this.duracao = duracao;
-
-        Date data_atual = new Date();
-        String data = new SimpleDateFormat("dd/MM/yyyy").format(data_atual);
-        this.data_evento = data;
+        this.data_evento = data_evento;
     }
 
-    public EventoModel(Integer id_contratante_evento, String nome, String endereco, String hora_inicio, Integer quantidade_participantes, double duracao) {
-        this.id_bar_evento = null;
-        this.id_contratante_evento = id_contratante_evento;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.hora_inicio = hora_inicio;
-        this.quantidade_participantes = quantidade_participantes;
-        this.duracao = duracao;
-
-        Date data_atual = new Date();
-        String data = new SimpleDateFormat("dd/MM/yyyy").format(data_atual);
-        this.data_evento = data;
-    }
 
 
     public EventoModel() {

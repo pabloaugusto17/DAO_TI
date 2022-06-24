@@ -31,5 +31,10 @@
             <Font size="25.0" />
          </font>
       </Button>
+      <Label fx:id="label_pagamento" layoutX="862.0" layoutY="31.0" onMousePressed="#onPressedPg" text="Pagamento" textFill="#f7a34a">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

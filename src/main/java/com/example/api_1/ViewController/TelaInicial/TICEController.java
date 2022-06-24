@@ -62,6 +62,8 @@ public class TICEController implements ControlledScreen {
     @FXML
     private Pane pane_2;
 
+
+
     @FXML
     void onButtonVejaEventosPressed(MouseEvent event) {
 
@@ -89,6 +91,15 @@ public class TICEController implements ControlledScreen {
         controller.setScreen("PropostaCE");
 
     }
+
+    @FXML
+    void onPressedPg(MouseEvent event) {
+
+        controller.loadScreen("PagamentoGeral", "/Pagamento/Pagamento.fxml", ScreenController.get_ac());
+        controller.setScreen("PagamentoGeral");
+    }
+
+
 
     @FXML
     public void initialize(){
