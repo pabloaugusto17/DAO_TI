@@ -20,7 +20,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="label_4" layoutX="440.0" layoutY="31.0" text="Proposta">
+      <Label fx:id="label_4" layoutX="440.0" layoutY="31.0" onMousePressed="#onPropostaPressed" text="Proposta">
          <font>
             <Font size="30.0" />
          </font>
